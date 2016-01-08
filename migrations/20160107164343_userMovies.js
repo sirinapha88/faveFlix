@@ -3,6 +3,8 @@ exports.up = function(knex, Promise) {
  		table.increments();// id serial primary key
  		table.integer('tv_show_id').references('id').inTable('tv_shows');
  		table.integer('user_id').references('id').inTable('users');
+ 		table.boolean('isFavorite');
+ 		table.boolean('hasWatched');
  	});
 };
 
