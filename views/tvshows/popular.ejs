@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/style.css" media="screen" title="no title" charset="utf-8">
+  <meta charset="UTF-8">
+  <title>faveFlix</title>
+</head>
+<body>
+  <div class="container-fluid">
+  <h2> Popular TV Show</h2>
+  <% populars.forEach(function(popular){ %>
+	<h3> <%= popular.name %></h3>
+  <img src="http://image.tmdb.org/t/p/w500<%= popular.poster_path %>" height="200" width="150" >
+  <h4> Rating: <%= popular.vote_average %></h4>
+  <h4> First on Air: <%= popular.first_air_date %> </h4>
+  <p> <%= popular.overview %> </p>
+  <% }) %>
+
+  
+  </div>
+  </body>
+</html>
