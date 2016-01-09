@@ -2,13 +2,19 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/style.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="/stylesheets/style.css" media="screen" title="no title" charset="utf-8">
   <meta charset="UTF-8">
   <title>faveFlix</title>
 </head>
 <body>
   <div class="container-fluid">
-  <h4> Hello</h4>
+  <h4> Top Rate TV Show</h4>
+  <% topRates.forEach(function(topRate){ %>
+	<h3><%= topRate.name %></h3>
+  <img src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="200" width="150" >
+  <% }) %>
+  
+  
   </div>
   </body>
 </html>

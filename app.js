@@ -20,8 +20,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 // ßapp.use(methodOverride('_method'));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + '/public/'));
 
 app.use('/', routes);
 app.use('/users', users);

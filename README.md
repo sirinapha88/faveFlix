@@ -65,3 +65,8 @@
       - Number of movies watched
       - Number of movies they want to watch
 - MAYBE IN THE FUTURE: This app should also be able to run reports for the user so that they can calibrate data based on what they have categorized/watched. 
+
+
+
+
+
