@@ -8,12 +8,15 @@
 </head>
 <body>
   <div class="container-fluid">
-  <h4> Top Rate TV Show</h4>
+  <h2> Top Rate TV Show</h2>
   <% topRates.forEach(function(topRate){ %>
-	<h3><%= topRate.name %></h3>
+	<h3> <%= topRate.name %></h3>
   <img src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="200" width="150" >
+  <h4> Rating: <%= topRate.vote_average %></h4>
+  <h4> First on Air: <%= topRate.first_air_date %> </h4>
+  <p> <%= topRate.overview %> </p>
   <% }) %>
-  
+
   
   </div>
   </body>
