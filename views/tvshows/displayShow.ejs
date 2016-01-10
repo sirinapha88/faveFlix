@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/style.css" media="screen" title="no title" charset="utf-8">
+  <meta charset="UTF-8">
+  <title>Display search</title>
+</head>
+<body>
+  <div class="container-fluid">
+  <h2> Searching TV Show</h2>
+  <% tvshowLists.forEach(function(tvshowList){ %>
+	<h3> <%= tvshowList.name %></h3>
+  <% if(tvshowList.poster_path === null) { %>
+      <img src="/images/noimage.png">
+  <% } else { %>
+  <img src="http://image.tmdb.org/t/p/w500<%= tvshowList.poster_path %>" height="200" width="150" >
+  <% } %>
+  <h4> Rating: <%= tvshowList.vote_average %></h4>
+  <h4> First on Air: <%= tvshowList.first_air_date %> </h4>
+  <p> <%= tvshowList.overview %> </p>
+  <% }) %>
+
+  
+  </div>
+  </body>
+</html>
