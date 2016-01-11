@@ -1,14 +1,18 @@
 var express = require('express');
+var passport = require('passport');
+var FacebookStrategy = require('passport-facebook').Strategy;
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var methodOverride = require("method-override");
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+require('dotenv').load();
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var tvshows = require('./routes/tvshows');
+var auth = require('./routes/auth');
 
 var app = express();
 
@@ -23,13 +27,39 @@ app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname + '/public/'));
 
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(obj, done) {
+  done(null, obj);
+});
+
+passport.use(new FacebookStrategy({
+    clientID: process.env['FACEBOOK_APP_ID'],
+    clientSecret: process.env['FACEBOOK_APP_SECRET'],
+    callbackURL: "http://localhost:3000/auth/facebook/callback",
+    enableProof: false
+  },
+  function(accessToken, refreshToken, profile, done) {
+    // User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+      process.nextTick(function () {
+      return done(null, profile);
+    });
+  }
+));
+
 app.use('/', routes);
 app.use('/users', users);
 app.use('/tvshows', tvshows);
+app.use('/auth', auth);
+
 
 app.get('/',function(req,res){
   res.redirect('/index');
 });
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -39,13 +69,6 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
-
-
-
-
-
-
-
 
 
 

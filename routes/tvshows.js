@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var passport = require('passport');
 var MovieDB = require('moviedb')('782b6c90018378ce662350a3bc5cdc63');
 
 /* GET users listing. */
@@ -78,3 +79,17 @@ router.delete('/:id',function(req,res){
 });
 
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
