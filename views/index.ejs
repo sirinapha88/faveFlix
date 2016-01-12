@@ -8,12 +8,13 @@
     <title>faveFlix</title>    
 </head>
 <body>
+  <div>
     <div class='header'>
       <h1><a href="/">faveFlix</a><img class='logo' src="https://image.freepik.com/free-icon/eye-outline-variant-with-heart-shaped-center_318-47710.jpg" alt="heart-eye" style="width:50px;height:50px;"></h1>
       <!-- <img src="https://image.freepik.com/free-icon/eye-outline-variant-with-heart-shaped-center_318-47710.jpg" alt="heart-eye" style="width:50px;height:50px;"> -->
     </div>
     <nav class="navbar navbar-default">
-      <div class="container-fluid">
+      <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
@@ -30,35 +31,55 @@
               <li><a href="#">Highly Rated</a>
               </li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Account <span class="caret"> </span>
-                </a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-            </li>
-          </ul>
-
-     <!--  <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+                  <a href="#" class="dropdown-toggle dropdown-right" data-toggle="dropdown" role="button" aria-expanded="false"> Account <span class="caret"> </span>
+                  </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+              </li>
+          </ul>      
         </div>
-          <button type="submit" class="btn btn-default">
-          <span class="glyphicon glyphicon-search" aria-hidden="true">
-          </span>
-          </button> -->
-
-
-      </form>
-      
-    </div>
+      </div>
+    </nav>
   </div>
-</nav>
+  <div class='row'>
+    <div class='col-md-3'></div>
+      <div id="custom-search-input">
+        <div class="input-group col-md-6">
+            <input type="text" class="  search-query form-control" placeholder="Search" />
+
+            <span class="input-group-btn">
+                <button class="btn btn-cerulian" type="button">
+                  <span class=" glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+            
+        </div>
+      </div>
+
+
+
+
+
+
+      <!--   <form class="navbar-form" role="search"> -->
+          <!-- <div class="form-group" style='display:inline;'>
+            <input type="text" class="form-control" > 
+         
+          </div>
+          <button type="submit" class="btn btn-default">
+            <span class="glyphicon glyphicon-search" aria-hidden="true">
+            </span>
+          </button>
+        </form>
+      </div> -->
+  </div>
 
 
 
