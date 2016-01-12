@@ -23,3 +23,7 @@ a {
 .logo{
 	padding-left: 10px;
 }
+
+#index-posters{
+	float: left;
+}

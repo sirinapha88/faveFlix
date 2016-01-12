@@ -8,101 +8,80 @@
     <title>faveFlix</title>    
 </head>
 <body>
-  <div>
+  <div class="container">
     <div class='header'>
-      <h1><a href="/">faveFlix</a><img class='logo' src="https://image.freepik.com/free-icon/eye-outline-variant-with-heart-shaped-center_318-47710.jpg" alt="heart-eye" style="width:50px;height:50px;"></h1>
-      <!-- <img src="https://image.freepik.com/free-icon/eye-outline-variant-with-heart-shaped-center_318-47710.jpg" alt="heart-eye" style="width:50px;height:50px;"> -->
+        <h1><a href="/">faveFlix</a><img class='logo' src="https://image.freepik.com/free-icon/eye-outline-variant-with-heart-shaped-center_318-47710.jpg" alt="heart-eye" style="width:50px;height:50px;"></h1>
     </div>
     <nav class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Popular <span class="sr-only">(current)</span></a>
-              </li>
-              <li><a href="#">Highly Rated</a>
-              </li>
-              <li class="dropdown">
-                  <a href="#" class="dropdown-toggle dropdown-right" data-toggle="dropdown" role="button" aria-expanded="false"> Account <span class="caret"> </span>
-                  </a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-              </li>
-          </ul>      
-        </div>
-      </div>
-    </nav>
-  </div>
-  <div class='row'>
-    <div class='col-md-3'></div>
-      <div id="custom-search-input">
-        <div class="input-group col-md-6">
-            <input type="text" class="  search-query form-control" placeholder="Search" />
-
-            <span class="input-group-btn">
-                <button class="btn btn-cerulian" type="button">
-                  <span class=" glyphicon glyphicon-search"></span>
-                </button>
-            </span>
-            
-        </div>
-      </div>
-
-
-
-
-
-
-      <!--   <form class="navbar-form" role="search"> -->
-          <!-- <div class="form-group" style='display:inline;'>
-            <input type="text" class="form-control" > 
-         
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
           </div>
-          <button type="submit" class="btn btn-default">
-            <span class="glyphicon glyphicon-search" aria-hidden="true">
-            </span>
-          </button>
-        </form>
-      </div> -->
-  </div>
 
-
-
-
-
-
-
-
-
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Popular <span class="sr-only"></span></a>
+                  </li>
+                  <li><a href="#">Highly Rated</a>
+                  </li>
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle dropdown-right" data-toggle="dropdown" role="button" aria-expanded="false"> Account <span class="caret"> </span>
+                      </a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                      </ul>
+                  </li>
+              </ul>      
+          </div>
+    </nav>
+<!--   </div> -->
+    <div class='row'>
+      <div class='col-md-3'></div>
+        <div id="custom-search-input">
+          <div class="input-group col-md-6">
+              <input type="text" class="  search-query form-control" placeholder="Search"/>
+                <span class="input-group-btn">
+                    <button class="btn btn-cerulian" type="button">
+                      <span class=" glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+          </div>
+        </div>
+    </div>
+      <div class='row'>
+        <div class='col-md-12'>
+          <% topRates.forEach(function(topRate){ %>
+          <img id ='index-posters'src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="200" width="150" >
+          <h4> <%= topRate.name %></h4>
+          <h6> Rating: <%= topRate.vote_average %></h6>
+         <% }) %>
+     
+        </div>
+      </div>
 
  </body>
 </html>
 
-<!--   <div>
-    <form action="/tvshows/search" method="get">
+  <!-- <div> -->
+    <!-- <form action="/tvshows/search" method="get">
       <label for="tvshow"></label>
         <input type="text" name="tvshow" placeholder="Enter TV Show Name" required>
             <input type="submit" value="submit">
             <h3>TV Show Search Results:</h3>
           </form>
-          <div id="q-results" class="results"></div>
-        </div>
- -->
+          <div id="q-results" class="results"></div> -->
+        <!-- </div> -->
+
         <!-- <div class="container-fluid">
         <h2> Top Rate TV Show</h2>
         <% topRates.forEach(function(topRate){ %>
