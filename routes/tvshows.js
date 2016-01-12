@@ -35,7 +35,7 @@ router.get('/search',function(req,res){
 
 router.get('/search/:searchString', function(req,res){
 	var tvshowSearch = req.params.searchString;
-	 console.log(tvshowSearch);
+
 	MovieDB.searchTv({query: tvshowSearch },function(err, searchRes){
 		tvshowLists = searchRes.results;
   		res.render('tvshows/displayShow', {tvshowLists:tvshowLists});
