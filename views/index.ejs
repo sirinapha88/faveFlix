@@ -59,32 +59,15 @@
         </div>
       </div>
       <div class='row'>
-        <div class='col-md-12'>
-          <div class='col-md-3' id='index-pic-1'>
-            <img src='https://unsplash.it/250/250/?random' alt="places" hspace="20">
-          </div>
-          <div class='col-md-3' id='index-pic-2'>
-            <img src='https://unsplash.it/250/250/?random' alt="places">
-          </div>
-          <div class='col-md-3' id='index-pic-3'>
-            <img src='https://unsplash.it/250/250/?random' alt="places">
-          </div>
-          <div class='col-md-3' id='index-pic-4'>
-            <img src='https://unsplash.it/250/250/?random' alt="places">
-          </div>
+        <div class='col-md-12' id='index-poster-rows'>
+          <% topRates.forEach(function(topRate){ %>
+          <img id ='index-posters'src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="200" width="150" >
+          <h4> <%= topRate.name %></h4>
+          <h6> Rating: <%= topRate.vote_average %></h6>
+         <% }) %>
         </div>
       </div>
-
-    <div class='col-md-3'></div>  
-    <div class='col-md-6'>
-      <h1 id='about-f-f'> ABOUT faveFlix </h1>
-      <P>Cupcake carrot cake bear claw brownie lollipop jelly beans. Tootsie roll pudding pie cotton candy. Marshmallow toffee dragée pudding chocolate jujubes marshmallow oat cake croissant. Bonbon topping candy canes candy candy canes bear claw brownie pie.
-      Jelly-o jujubes jelly oat cake cake icing. Soufflé cookie fruitcake candy. Danish toffee lollipop.</P>
-
-
-
-
-
+      
 
 
  </body>
@@ -128,3 +111,27 @@
         
         </div> -->
  
+<!-- INDEX PAGE PICS AND ABOUT -->
+      <!-- <div class='row'>
+        <div class='col-md-12'>
+          <div class='col-md-3' id='index-pic-1'>
+            <img src='https://unsplash.it/250/250/?random' alt="places" hspace="20">
+          </div>
+          <div class='col-md-3' id='index-pic-2'>
+            <img src='https://unsplash.it/250/250/?random' alt="places">
+          </div>
+          <div class='col-md-3' id='index-pic-3'>
+            <img src='https://unsplash.it/250/250/?random' alt="places">
+          </div>
+          <div class='col-md-3' id='index-pic-4'>
+            <img src='https://unsplash.it/250/250/?random' alt="places">
+          </div>
+        </div>
+      </div> -->
+
+   <!--  <div class='col-md-3'></div>  
+    <div class='col-md-6'>
+      <h1 id='about-f-f'> ABOUT faveFlix </h1>
+      <P>Cupcake carrot cake bear claw brownie lollipop jelly beans. Tootsie roll pudding pie cotton candy. Marshmallow toffee dragée pudding chocolate jujubes marshmallow oat cake croissant. Bonbon topping candy canes candy candy canes bear claw brownie pie.
+      Jelly-o jujubes jelly oat cake cake icing. Soufflé cookie fruitcake candy. Danish toffee lollipop.</P>
+ -->
