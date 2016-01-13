@@ -1,4 +1,4 @@
-var express = require('express');
+  var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex');
 var bcrypt = require('bcrypt');
@@ -44,7 +44,6 @@ router.post('/signup', function(req, res, next) {
       var hash = bcrypt.hashSync(req.body.password, 8);
       Users().insert({
         name: req.body.name,
-        fave_genre: req.body.fave_genre,
         email: req.body.email,
         password: hash
       }, 'id').then(function(id) {

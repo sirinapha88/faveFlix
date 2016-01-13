@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
+var request = require('request');
 var MovieDB = require('moviedb')('782b6c90018378ce662350a3bc5cdc63');
 
 /* GET users listing. */
@@ -22,6 +23,15 @@ router.get('/newRelease',function(req,res){
 	MovieDB.miscTopRatedTvs(function(err, searchRes){
 		topRates = searchRes.results;
 		res.render("tvshows/newRelease" , {topRates:topRates});
+	});
+});
+
+router.get('/tvAiringToday',function(req,res){
+	request.get('http://api.themoviedb.org/3/tv/latest', function(err, response, body){
+		var input = JSON.parse(body);
+		console.log(input);
+		// topRates = searchRes.results;
+		// res.render("tvshows/newRelease" , {topRates:topRates});
 	});
 });
 
