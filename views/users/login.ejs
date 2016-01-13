@@ -47,12 +47,12 @@
         </div>
         <div class='col-md-6' id="login-custom-search-input">
           <div class='input-group' id='search-box'>
-              <input type="text" class="search-query form-control" placeholder="Search"/>
-                <span class="input-group-btn">
-                    <button class="btn btn-cerulian" type="button">
-                      <span class=" glyphicon glyphicon-search"></span>
-                    </button>
-                </span>
+                <form action="/tvshows/search" method="get">
+                  <label for="tvshow"></label>
+                  <input type="text" name="tvshow" placeholder="Enter TV Show Name" required>
+                  <input type="submit" value="submit">
+                </form>
+                <div id="q-results" class="results"></div>
           </div>
           <br>
           <br>
