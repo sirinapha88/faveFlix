@@ -29,7 +29,7 @@ router.get('/newRelease',function(req,res){
 router.get('/search',function(req,res){
 
     var tvshowQuery = req.query.tvshow;
-    console.log("this is " + tvshowQuery);
+    
     res.redirect('/tvshows/search/' + tvshowQuery);
   });
 
@@ -38,6 +38,7 @@ router.get('/search/:searchString', function(req,res){
 
 	MovieDB.searchTv({query: tvshowSearch },function(err, searchRes){
 		tvshowLists = searchRes.results;
+		console.log("this is " + tvshowLists[0].id);
   		res.render('tvshows/displayShow', {tvshowLists:tvshowLists});
 	});
 });

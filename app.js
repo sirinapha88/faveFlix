@@ -8,7 +8,13 @@ var logger = require('morgan');
 var methodOverride = require("method-override");
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var knex = require('./db/knex');
 require('dotenv').load();
+
+
+var Users = function () {
+  return knex('users');
+};
 
 passport.serializeUser(function(user, done) {
   done(null, user);
@@ -25,11 +31,24 @@ passport.use(new FacebookStrategy({
   callbackURL: config.facebook.callbackURL
   },
   function(accessToken, refreshToken, profile, done) {
+    console.log(profile);
     process.nextTick(function () {
-      return done(null, profile);
+      Users().where({facebook_id: profile.id}).then(function(user, err) {
+        if(err)
+          done(err);
+        if(user[0]) {
+          return done(null, user[0]);
+        } else {
+          Users().insert({facebook_id: profile.id, name: profile.displayName, email: profile.emails}).then(function() {
+            Users().where({facebook_id: profile.id}).then(function(data) {
+              return done(null, data[0]);
+            });
+          });
+        }
+      });
     });
   }
-));
+ ));
 
 var app = express();
 var routes = require('./routes/index');
@@ -45,6 +64,10 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(cookieParser(process.env.SECRET));
+
+app.use(passport.initialize());
+app.use(passport.session());// persistent login sessions
 // app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.use(express.static(__dirname + '/public/'));
