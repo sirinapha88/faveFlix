@@ -48,14 +48,26 @@
     <div class='row'>
       <div class='col-md-3'></div>
         <div class='col-md-6' id="index-custom-search-input">
-          <div class='input-group' id='search-box'>
+          <div>
+            <form action="/tvshows/search" method="get">
+            <label for="tvshow"></label>
+            <input type="text" name="tvshow" placeholder="Enter TV Show Name" required>
+            <input type="submit" value="submit">
+            <h3>TV Show Search Results:</h3>
+          </form>
+          <div id="q-results" class="results"></div>
+        </div>
+
+
+
+          <!-- <div class='input-group' id='search-box'>
               <input type="text" class="search-query form-control" placeholder="Search"/>
                 <span class="input-group-btn">
                     <button class="btn btn-cerulian" type="button">
                       <span class=" glyphicon glyphicon-search"></span>
                     </button>
                 </span>
-          </div>
+          </div> -->
         </div>
     </div>
 
