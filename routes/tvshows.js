@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var passport = require('passport');
 var MovieDB = require('moviedb')('782b6c90018378ce662350a3bc5cdc63');
 
 /* GET users listing. */
@@ -28,15 +29,16 @@ router.get('/newRelease',function(req,res){
 router.get('/search',function(req,res){
 
     var tvshowQuery = req.query.tvshow;
-    console.log("this is " + tvshowQuery);
+    
     res.redirect('/tvshows/search/' + tvshowQuery);
   });
 
 router.get('/search/:searchString', function(req,res){
 	var tvshowSearch = req.params.searchString;
-	 console.log(tvshowSearch);
+
 	MovieDB.searchTv({query: tvshowSearch },function(err, searchRes){
 		tvshowLists = searchRes.results;
+		console.log("this is " + tvshowLists[0].id);
   		res.render('tvshows/displayShow', {tvshowLists:tvshowLists});
 	});
 });
@@ -78,3 +80,17 @@ router.delete('/:id',function(req,res){
 });
 
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

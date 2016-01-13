@@ -4,11 +4,10 @@ exports.up = function(knex, Promise) {
  		table.string('name');
  		table.string('email');
  		table.string('password');
- 		table.string('fave_genre');
+ 		table.string('facebook_id');
  	});
 };
 
 exports.down = function(knex, Promise) {
 	return knex.schema.dropTable('users');  
 };
-
