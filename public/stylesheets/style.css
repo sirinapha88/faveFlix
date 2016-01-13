@@ -87,13 +87,20 @@
 #likes{
 	text-align: center;
 	margin-top: 50%;
+	color: #2FA4E7;
 }
 
 #watchlist{
 	text-align: center;
 	margin-top: 50%;
+	color: #2FA4E7;
 }
 
+#results{
+	margin-top: 10%;
+	margin-left: relative;
+	color: #2FA4E7;
+}
 
 
 
