@@ -17,6 +17,8 @@
 
 #index-poster-rows{
 	margin-top: 70px;
+	display: flex;
+   	flex-wrap: wrap;
 
 }
 

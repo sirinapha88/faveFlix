@@ -62,9 +62,11 @@
     <div class='row'>
       <div class='col-md-12' id='index-poster-rows'>
         <% topRates.forEach(function(topRate){ %>
-        <img id ='index-posters'src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="200" width="150" >
-        <h4> <%= topRate.name %></h4>
-        <h6> Rating: <%= topRate.vote_average %></h6>
+        <div>
+          <img id ='index-posters'src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="200" width="150" >
+          <h4> <%= topRate.name %></h4>
+          <h6> Rating: <%= topRate.vote_average %></h6>
+        </div>
        <% }) %>
       </div>
     </div>
