@@ -43,16 +43,16 @@
     <div class='row'>
       <div class='col-md-3'></div>
         <div class='col-md-6' id="index-custom-search-input">
-          <!-- <div class='input-group' id='search-box'>
+          <div class='input-group' id='search-box'>
             <form action="/tvshows/search" method="get">
             <label for="tvshow"></label>
             <input type="text" name="tvshow" placeholder="Enter TV Show Name" required>
             <input type="submit" value="submit">
           </form>
           <div id="q-results" class="results"></div>
-        </div> -->
+        </div>
 
-       <div class='input-group' id='search-box'>
+     <!--   <div class='input-group' id='search-box'>
               <input type="text" class="search-query form-control" placeholder="Search"/>
                 <span class="input-group-btn">
                     <button class="btn btn-cerulian" type="button">
@@ -60,7 +60,7 @@
                     </button>
                 </span>
           </div>
-
+ -->
 
 
 
@@ -74,6 +74,7 @@
           <img id ='index-posters'src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="350" width="250" >
           <h4 id='title'> <%= topRate.name %></h4>
           <h6 id='rating'> Rating: <%= topRate.vote_average %></h6>
+          <span class= 'glyphicon glyphicon-heart-empty'></span>
         </div>
        <% }) %>
       </div>

@@ -35,39 +35,36 @@
                     <li><a href="#">Logout</a>
                     </li>
                   </ul>
-      
           </div>
     </nav>
-      <div class='col-md-3' id='poster-streams'>
-           <% topRates.forEach(function(topRate){ %>
-            <div>
-              <img id ='index-posters-signup'src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="300" width="250" >
-              <h4> <%= topRate.name %></h4>
-              <h6> Rating: <%= topRate.vote_average %></h6>
-            </div>
-           <% }) %>
-        </div>
-
-        <div class='col-md-6' id="index-custom-search-input">
-          <div class='input-group' id='search-box'>
-            <form action="/tvshows/search" method="get">
-	            <label for="tvshow"></label>
-	            <input type="text" name="tvshow" placeholder="Enter TV Show Name" required class='search-query form control'/>
-	            <input type="submit" value="submit">
-         	</form>
-          	<div id="q-results" class="results"></div>
+    <div class='col-md-3' id='poster-streams'>
+         <% topRates.forEach(function(topRate){ %>
+          <div>
+            <img id ='index-posters-signup'src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="300" width="250" >
+            <h4> <%= topRate.name %></h4>
+            <h6> Rating: <%= topRate.vote_average %></h6>
           </div>
-    			<div class='col-md-3'>
-		    		<h3 id='likes'>LIKES</h3>
-		    		 <img src='https://unsplash.it/250/250/?random' alt="places" hspace="20">
-         		</div>
-         		<div class="col-md-6"></div>
-         		<div class='col-md-3'>
-		    		<h3 id='watchlist'>WATCHLIST</h3>
-		    		 <img src='https://unsplash.it/250/250/?random' alt="places" hspace="20">
-         		</div>
-         	</div>
+         <% }) %>
+    </div>
 
-   
+    <div class='col-md-6' id="index-custom-search-input">
+      <div class='input-group' id='search-box'>
+        <form action="/tvshows/search" method="get">
+          <label for="tvshow"></label>
+          <input type="text" name="tvshow" placeholder="Enter TV Show Name" required class='search-query form control'/>
+          <input type="submit" value="submit">
+     	  </form>
+      	<div id="q-results" class="results"></div>
+      </div>
+			<div class='col-md-3'>
+    		<h3 id='likes'>LIKES</h3>
+    		 <img src='https://unsplash.it/250/250/?random' alt="places" hspace="20">
+     		</div>
+     		<div class="col-md-6"></div>
+     		<div class='col-md-3'>
+    		<h3 id='watchlist'>WATCHLIST</h3>
+    		 <img src='https://unsplash.it/250/250/?random' alt="places" hspace="20">
+     		</div>
+     	</div>
 </body>
 </html>
