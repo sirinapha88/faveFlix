@@ -45,15 +45,13 @@
       </nav>
 
         <div class='col-md-3' id='poster-streams'>
-          <div class='row' id='show-poster-stream'>
-              <img id ='index-posters'src="https://unsplash.it/300/300/?random">
-          </div>
-          <div class='row' id='show-poster-stream'>
-              <img id ='index-posters'src="https://unsplash.it/300/300/?random">
-          </div>
-          <div class='row' id='show-poster-stream'>
-              <img id ='index-posters'src="https://unsplash.it/300/300/?random">
-          </div>
+           <% topRates.forEach(function(topRate){ %>
+            <div>
+              <img id ='index-posters-signup'src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="300" width="250" >
+              <h4> <%= topRate.name %></h4>
+              <h6> Rating: <%= topRate.vote_average %></h6>
+            </div>
+           <% }) %>
         </div>
         <div class='col-md-6' id="signup-custom-search-input">
           <div class='input-group' id='search-box'>
