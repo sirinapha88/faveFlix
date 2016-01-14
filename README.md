@@ -6,6 +6,7 @@
   - This app serves the purpose of tracking movies that the user wants to watch, and/or has watched (along with the rating if the user chooses to provide one).  
   - This app helps the user prioritize their movie viewing preferences. It should allow the user to put movies on either a  “watch” or “seen it” list. If a movie is added to the users’ “seen it” list, they can also specify ratings for the movie. To be clear, the user cannot watch movies on this app. It is only for tracking purposes. 
   - The ratings are standard 1-5 (1 meaning the user hated it, 5 meaning they loved it and would watch again)
+
 * OUTPUTS:
   - The user needs to be able to:
   - Sign up with their email as the username and create a password
@@ -64,6 +65,7 @@
       - Email
       - Number of movies watched
       - Number of movies they want to watch
+      
 - MAYBE IN THE FUTURE: This app should also be able to run reports for the user so that they can calibrate data based on what they have categorized/watched. 
 
 
