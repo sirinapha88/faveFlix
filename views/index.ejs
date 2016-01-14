@@ -20,13 +20,13 @@
           </div>
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
+              <ul class="nav navbar-nav" id='left-nav-items'>
                   <li><a href="/tvshows/popular">Popular</a>
                   </li>
                   <li><a href="tvshows/topRated">Highly Rated</a>
                   </li>
               </ul>
-              <ul class='nav navbar-nav navbar-right'>
+              <ul class='nav navbar-nav navbar-right' id='right-nav-items'>
                   <li><a href="/users/profile">Profile</a>
                   </li>
                   <li><a href="/users/login">Login</a>
@@ -43,7 +43,7 @@
           <div class='input-group' id='search-box'>
               <form action="/tvshows/search" method="get" id='tvSearch'>
                   <label for="tvshow"></label>
-                  <input type="text" id= 'tvshow' name="tvshow" placeholder="   Search..." required>
+                  <input type="text" id='tvshow' name="tvshow" placeholder="   Search..." required>
                   <input type="submit" class="fa fa-search" value= '&#xf002' id='searchBtn'>
               </form>
             <div id="q-results" class="results"></div>

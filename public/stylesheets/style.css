@@ -1,4 +1,8 @@
-
+body{
+	font-family: Trebuchet MS;
+	color: #2FA4E7;
+	letter-spacing: 1px;
+}
 .user-commands{
 	margin-right: 10px;
 }
@@ -11,10 +15,19 @@
 	padding-left: 10px;
 }
 
+#left-nav-items{
+	font-family: Trebuchet MS;
+	letter-spacing: 1px;
+}
+
+#right-nav-items{
+	font-family: Trebuchet MS;
+	letter-spacing: 1px;
+}
+
 #search-box{
 	margin-top: 50px;
 	margin-left: 0px;
-	/*padding-left: 100px;*/
 }
 
 #tvshow{
@@ -28,8 +41,9 @@
     background-image: none;
     border: 1px solid #cccccc;
     border-radius: 4px;
+    letter-spacing: 1px;
 }
-}
+
 
 
 #formTvshow{
@@ -43,6 +57,7 @@
     background-image: none;
     border: 1px solid #cccccc;
     border-radius: 4px;
+    letter-spacing: 1px;
 }
 
 #formSearchBtn{
@@ -64,8 +79,6 @@
 	display: flex;
    	flex-flow: row wrap;
    	justify-content: space-around;
-   	/*word-wrap: break-word;*/
-
 }
 
 #index-posters{
@@ -73,7 +86,10 @@
 }
 
 #title{
+	font-family: Trebuchet MS;
 	word-wrap: break-word;
+	color: #2FA4E7;
+	letter-spacing: 0px;
 }
 
 #about-f-f{
@@ -88,7 +104,7 @@
 }
 
 #signup-here{
-
+	letter-spacing: 1px;
 	text-align: center;
 	color: #2FA4E7;
 }
@@ -96,11 +112,13 @@
 #signup-btn{
 	position: relative;
 	left: 50%;
+	letter-spacing: 1px;
 }
 
 #fb-signup{
 	text-align: center;
 	color: #2FA4E7;
+	letter-spacing: 1px;
 }
 
 #fb-btn{
@@ -118,7 +136,7 @@
 }
 
 #login-here{
-
+	letter-spacing: 1px;
 	text-align: center;
 	color: #2FA4E7;
 }
@@ -166,7 +184,6 @@
 	border: 0px;
 	padding: 0px;
 	outline: none;
-	/*background-color: transparent;*/
 }
 
 #watchMe{
@@ -178,7 +195,21 @@
 	margin-right: 10px;
 }
 
-/*THIS IS FOR THE INDEX PAGE TV SHOW POSTERS*/
-/*#index-posters{
-	float:left;
+
+#popular{
+	font-family: Trebuchet MS;
+	font-weight: 700px;
+	letter-spacing: 1px;
+}
+
+#results{
+	font-family: Trebuchet MS;
+	font-weight: 700px;
+	letter-spacing: 1px;
+}
+
+#highly-rated{
+	font-family: Trebuchet MS;
+	font-weight: 700px;
+	letter-spacing: 1px;
 }
