@@ -21,46 +21,62 @@
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav" id='left-nav-items'>
-                <li><a href="/tvshows/popular">Popular</a>
-                </li>
-                <li><a href="/tvshows/topRated">Highly Rated</a>
-                </li>
+                  <li><a href="/tvshows/popular">Popular</a>
+                  </li>
+                  <li><a href="/tvshows/topRated">Highly Rated</a>
+                  </li>
               </ul>
               <ul class='nav navbar-nav navbar-right' id='right-nav-items'>
-                <li><a href="/users/profile">Profile</a>
-                </li>
-                <li><a href="/users/login">Login</a>
-                </li>
-                <li><a href="/users/signup">Signup</a>
-                </li>
-              </ul>     
+                  <li><a href="/users/profile">Profile</a>
+                  </li>
+                  <li><a href="/users/login">Login</a>
+                  </li>
+                  <li><a href="/users/signup">Signup</a>
+                  </li>
+              </ul>
           </div>
     </nav>
-    <div class='col-md-3' id='poster-streams'>
-         <% topRates.forEach(function(topRate){ %>
-          <div>
-            <img id ='index-posters-signup'src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="300" width="250" >
-            <h4> <%= topRate.name %></h4>
-            <h6> Rating: <%= topRate.vote_average %></h6>
-          </div>
-         <% }) %>
-      </div>
-      <div class='row'>
+
+    <div class='row'>
+      <div class='col-md-3'></div>
         <div class='col-md-6' id="index-custom-search-input">
           <div class='input-group' id='search-box'>
-            <form action="/tvshows/search" method="get" id='tvSearch'>
+              <form action="/tvshows/search" method="get" id='tvSearch'>
                   <label for="tvshow"></label>
-                  <input type="text" id= 'tvshow' name="tvshow" placeholder="   Search..." required>
+                  <input type="text" id='tvshow' name="tvshow" placeholder="   Search..." required>
                   <input type="submit" class="fa fa-search" value= '&#xf002' id='searchBtn'>
-            </form>
+              </form>
             <div id="q-results" class="results"></div>
           </div>
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class='col-md-12' id='index-poster-rows'>
+        <% topRates.forEach(function(topRate){ %>
+        <div>
+          <img id ='index-posters'src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="360" width="260" >
+          <h4 id='title'> <%= topRate.name %>
+          
+          </h4>
+
+          <h6 id='rating'> Rating: <%= topRate.vote_average %>
+          &nbsp;
+          &nbsp;
+              <button type="button" class="btn btn-default btn-lg" id='favorite'>
+                  <a href="/users/profile"
+                  <span class="fa fa-heart" style="color:#46b8da;" data-tmdbID="<%=topRate.id %>"></span></a>
+              </button>
+          &nbsp;
+          &nbsp;
+              <button type="button" class="btn btn-default btn-lg" id='watchMe'>
+                  <a href="/users/profile"
+                  <span class="fa fa-eye" style="color:#46b8da;" data-tmdbID="<%=topRate.id %>"></span></a>
+              </button>
+          </h6>
         </div>
-        <div class='col-md-6'>
-            <h3 id='highly-rated'> <strong> HIGHLY RATED</strong></h3>
-             <img src='https://unsplash.it/700/200/?random' alt="places" hspace="20">
-        </div>
-      </div> 
-    </div>  
+       <% }) %>
+      </div>
+    </div>
 </body>
 </html>

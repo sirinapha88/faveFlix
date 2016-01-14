@@ -62,7 +62,7 @@ router.get('/search/:searchString', function(req,res){
 	MovieDB.searchTv({query: tvshowSearch },function(err, searchRes){
 		tvshowLists = searchRes.results;
 		console.log("this is " + tvshowLists[0].id);
-  		res.render('tvshows/displayShow', {tvshowLists:tvshowLists});
+  		res.render('tvshows/displayShow', {tvshowLists:tvshowLists,tvshowSearch:tvshowSearch});
 	});
 });
 
