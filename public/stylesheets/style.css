@@ -120,7 +120,21 @@
 	color: #2FA4E7;
 }
 
+#favorite{
+	border: 0px;
+	padding: 0px;
+	outline: none;
+	/*background-color: transparent;*/
+}
 
+#watchMe{
+	border: 0px;
+	padding: 0px;
+}
+
+#rating{
+	margin-right: 10px;
+}
 
 /*THIS IS FOR THE INDEX PAGE TV SHOW POSTERS*/
 /*#index-posters{
