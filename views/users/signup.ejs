@@ -13,75 +13,72 @@
           <h1><a href="/">faveFlix</a><img class='logo' src="https://image.freepik.com/free-icon/eye-outline-variant-with-heart-shaped-center_318-47710.jpg" alt="heart-eye" style="width:50px;height:50px;"></h1>
       </div>
       <nav class="navbar navbar-default">
-
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-              </button>
-            </div>
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                  <li><a href="#">Popular</a>
-                  </li>
-                  <li><a href="#">Highly Rated</a>
-                  </li>
-              </ul>
-                  <ul class='nav navbar-nav navbar-right'>
-                    <li><a href="/users/profile">Profile</a>
-                    </li>
-                    <li><a href="/users/login">Login</a>
-                    </li>
-                    <li><a href="/users/signup">Signup</a>
-                    </li>
-                  </ul>     
-            </div>
-      </nav>
-
-        <div class='col-md-3' id='poster-streams'>
-           <% topRates.forEach(function(topRate){ %>
-            <div>
-              <img id ='index-posters-signup'src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="300" width="250" >
-              <h4> <%= topRate.name %></h4>
-              <h6> Rating: <%= topRate.vote_average %></h6>
-            </div>
-           <% }) %>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+          </button>
         </div>
-        <div class='col-md-6' id="signup-custom-search-input">
-            <div class='input-group' id='search-box'>
-                <form action="/tvshows/search" method="get">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="/tvshows/popular">Popular</a>
+              </li>
+              <li><a href="/tvshows/topRated">Highly Rated</a>
+              </li>
+          </ul>
+          <ul class='nav navbar-nav navbar-right'>
+              <li><a href="/users/profile">Profile</a>
+              </li>
+              <li><a href="/users/login">Login</a>
+              </li>
+              <li><a href="/users/signup">Signup</a>
+              </li>
+          </ul>     
+        </div>
+      </nav>
+      <div class='col-md-3' id='poster-streams'>
+         <% topRates.forEach(function(topRate){ %>
+          <div>
+            <img id ='index-posters-signup'src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="300" width="250" >
+            <h4> <%= topRate.name %></h4>
+            <h6> Rating: <%= topRate.vote_average %></h6>
+          </div>
+         <% }) %>
+      </div>
+      <div class='col-md-6' id="signup-custom-search-input">
+          <div class='input-group' id='search-box'>
+              <form action="/tvshows/search" method="get" id='tvSearch'>
                   <label for="tvshow"></label>
-                  <input type="text" name="tvshow" placeholder="Enter TV Show Name" required>
-                  <input type="submit" value="submit">
-                </form>
-                <div id="q-results" class="results"></div>
-            </div>
+                  <input type="text" id= 'tvshow' name="tvshow" placeholder="   Search..." required>
+                  <input type="submit" class="fa fa-search" value= '&#xf002' id='searchBtn'>
+              </form>
+              <div id="q-results" class="results"></div>
+          </div>
           <br>
           <br>
-             <form id='signup-form'>
-                <h4 id='signup-here'> SIGN UP USING EMAIL: </h4>
-                <br>
-                <div class="form-group">
+        <form id='signup-form'>
+              <h4 id='signup-here'> LOGIN USING EMAIL: </h4>
+              <br>
+              <div class="form-group">
                   <label for="exampleInputName2">Name</label>
                   <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Full Name">
-                </div>
-                <div class="form-group">
+              </div>
+              <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
                   <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                </div>
-                <div class="form-group">
+              </div>
+              <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
                   <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <button type="submit" class="btn btn-default" id='signup-btn'>Submit</button>
-              </form>
-            <br>
-            <h4 id='fb-signup'> SIGN UP USING FACEBOOK: </h4>
-            <img id='fb-btn' src='http://www.bon-app.com/bonapp2/images/social-media/facebook-signup-button.png'>
-        </div>
+              </div>
+              <button type="submit" class="btn btn-default" id='signup-btn'>Submit</button>
+          </form>
+          <br>
+          <h4 id='fb-signup'> SIGN UP USING FACEBOOK: </h4>
+          <img id='fb-btn' src='http://www.bon-app.com/bonapp2/images/social-media/facebook-signup-button.png'>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>
 
 

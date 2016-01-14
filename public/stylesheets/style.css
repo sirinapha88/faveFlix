@@ -11,20 +11,27 @@
 	padding-left: 10px;
 }
 
-/*#search-box{
+#search-box{
 	margin-top: 50px;
 	margin-left: 0px;
-	/*padding-left: 100px;
-}*/
+	/*padding-left: 100px;*/
+}
 
 #tvshow{
-	width: 550px;
+	width: 500px;
 	height: 50px;
+	border-radius: 7px;
+	font-size: 17px;
 }
-/*form{
-	padding-left: 100px;
-	width: 100px;
-}*/
+
+#searchBtn{
+	border: 50px;
+/*	padding-top: 15px;
+	padding-bottom: 15px;*/
+	padding: 15px;
+	border-radius: 7px;
+}
+
 
 #index-poster-rows{
 	margin-top: 70px;
