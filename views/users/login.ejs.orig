@@ -1,22 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha256-Ucf/ylcKTNevYP6l7VNUhGLDRZPQs1+LsbbxuzMxUJM= sha512-FW2XqnqMwERwg0LplG7D64h8zA1BsxvxrDseWpHLq8Dg8kOBmLs19XNa9oAajN/ToJRRklfDJ398sOU+7LcjZA==" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/style.css" media="screen" title="no title" charset="utf-8">
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+</head>
 <body>
   <div class="container">
       <div class='header'>
@@ -26,13 +15,17 @@
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
+<<<<<<< HEAD
                 <!-- <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span> -->
+=======
+>>>>>>> master
               </button>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+<<<<<<< HEAD
                     <li ><a href="#">Popular <span class="sr-only"></span></a>
                     </li>
                     <li><a href="#">Highly Rated</a>
@@ -55,6 +48,26 @@
       </nav>
 
        <div class='col-md-3' id='poster-streams'>
+=======
+                  <li><a href="#">Popular</a>
+                  </li>
+                  <li><a href="#">Highly Rated</a>
+                  </li>
+                </ul>
+                  <ul class='nav navbar-nav navbar-right'>
+                    <li><a href="#">Profile</a>
+                    </li>
+                    <li><a href="#">Login</a>
+                    </li>
+                    <li><a href="#">Signup</a>
+                    </li>
+                  </ul>
+            </div>
+      </nav>
+
+      <!-- <div class='row' id='show-poster-stream'> -->
+        <div class='col-md-3' id='poster-streams'>
+>>>>>>> master
           <% topRates.forEach(function(topRate){ %>
             <div>
               <img id ='index-posters-signup'src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="300" width="250" >
@@ -65,6 +78,7 @@
         </div>
         <div class='col-md-6' id="login-custom-search-input">
           <div class='input-group' id='search-box'>
+<<<<<<< HEAD
               <input type="text" class="search-query form-control" placeholder="Search"/>
                 <span class="input-group-btn">
                     <button class="btn btn-cerulian" type="button">
@@ -96,9 +110,37 @@
             <a href="/auth/facebook">
             <img id='fb-btn' src='http://www.bon-app.com/bonapp2/images/social-media/facebook-signup-button.png'>
             </a>
+=======
+                <form action="/tvshows/search" method="get">
+                  <label for="tvshow"></label>
+                  <input type="text" name="tvshow" placeholder="Enter TV Show Name" required>
+                  <input type="submit" value="submit">
+                </form>
+                <div id="q-results" class="results"></div>
+          </div>
+          <br>
+          <br>
+             <form id='login-form'>
+                <h4 id='login-here'> LOGIN USING EMAIL: </h4>
+                <br>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-default" id='signup-btn'>Submit</button>
+            </form>
+            <br>
+            <h4 id='fb-signup'> LOGIN USING FACEBOOK: </h4>
+            <img id='fb-btn' src='http://www.bon-app.com/bonapp2/images/social-media/facebook-signup-button.png'>
+>>>>>>> master
         </div>
       </div>
     </div>
 
   </body>
 </html>
+

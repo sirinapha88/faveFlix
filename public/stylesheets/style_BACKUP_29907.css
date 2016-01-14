@@ -1,17 +1,11 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
 
-.header{
-	padding-bottom: 10px;
-}
-img {
-	width: 80;
-	height: 110;
-
+<<<<<<< HEAD
+.dropdown{
+	padding-left: 55em;
+=======
 .user-commands{
 	margin-right: 10px;
+>>>>>>> master
 }
 
 .header{
@@ -20,6 +14,30 @@ img {
 
 .logo{
 	padding-left: 10px;
+<<<<<<< HEAD
+}
+
+#search-box{
+	margin-top: 50px;
+}
+
+#index-poster-rows{
+	
+	display: flex;
+   	flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+#index-posters{
+	float:left;
+}
+
+#about-f-f{
+	text-align: center;
+	color: #2FA4E7;
+}
+
+=======
 }
 
 #search-box{
@@ -50,6 +68,7 @@ img {
 	color: #2FA4E7;
 }
 
+>>>>>>> master
 
 #side-column-img{
 
@@ -65,6 +84,46 @@ img {
 #signup-btn{
 	position: relative;
 	left: 50%;
+<<<<<<< HEAD
+}
+
+#fb-signup{
+	text-align: center;
+	color: #2FA4E7;
+}
+
+#fb-btn{
+	position: absolute;
+	left: 50%;
+}
+
+#signup-custom-search-input{
+	margin-top: 3%;
+	margin-left: 70px;
+}
+
+#signup-form{
+	margin-top: 8%;
+}
+
+#login-here{
+
+	text-align: center;
+	color: #2FA4E7;
+}
+
+#login-custom-search-input{
+	margin-top: 3%;
+	margin-left: 70px;
+}
+
+#login-form{
+	margin-top: 8%;
+}
+
+
+
+=======
 }
 
 #fb-signup{
@@ -146,10 +205,9 @@ img {
 #rating{
 	margin-right: 10px;
 }
+>>>>>>> master
 
 /*THIS IS FOR THE INDEX PAGE TV SHOW POSTERS*/
 /*#index-posters{
 	float:left;
-}	position: relative;
-	left: 50%;
 }
