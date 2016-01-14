@@ -1,13 +1,91 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+.dropdown{
+	padding-left: 55em;
 }
 
-a {
-  color: #00B7FF;
+.header{
+	padding-bottom: 10px;
 }
-img {
-	width: 80;
-	height: 110;
+
+.logo{
+	padding-left: 10px;
+}
+
+#search-box{
+	margin-top: 50px;
+}
+
+#index-poster-rows{
+	
+	display: flex;
+   	flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+#index-posters{
+	float:left;
+}
+
+#about-f-f{
+	text-align: center;
+	color: #2FA4E7;
+}
+
+
+#side-column-img{
+
+	margin-top: 30px;
+}
+
+#signup-here{
+
+	text-align: center;
+	color: #2FA4E7;
+}
+
+#signup-btn{
 	position: relative;
+	left: 50%;
+}
+
+#fb-signup{
+	text-align: center;
+	color: #2FA4E7;
+}
+
+#fb-btn{
+	position: absolute;
+	left: 50%;
+}
+
+#signup-custom-search-input{
+	margin-top: 3%;
+	margin-left: 70px;
+}
+
+#signup-form{
+	margin-top: 8%;
+}
+
+#login-here{
+
+	text-align: center;
+	color: #2FA4E7;
+}
+
+#login-custom-search-input{
+	margin-top: 3%;
+	margin-left: 70px;
+}
+
+#login-form{
+	margin-top: 8%;
+}
+
+
+
+
+/*THIS IS FOR THE INDEX PAGE TV SHOW POSTERS*/
+/*#index-posters{
+	float:left;
 }

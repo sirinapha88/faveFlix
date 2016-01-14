@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha256-Ucf/ylcKTNevYP6l7VNUhGLDRZPQs1+LsbbxuzMxUJM= sha512-FW2XqnqMwERwg0LplG7D64h8zA1BsxvxrDseWpHLq8Dg8kOBmLs19XNa9oAajN/ToJRRklfDJ398sOU+7LcjZA==" crossorigin="anonymous">
-  <link rel="stylesheet" href="/stylesheets/style.css" media="screen" title="no title" charset="utf-8">
-  <meta charset="UTF-8">
-  <title>Search Results Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha256-Ucf/ylcKTNevYP6l7VNUhGLDRZPQs1+LsbbxuzMxUJM= sha512-FW2XqnqMwERwg0LplG7D64h8zA1BsxvxrDseWpHLq8Dg8kOBmLs19XNa9oAajN/ToJRRklfDJ398sOU+7LcjZA==" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/stylesheets/style.css" media="screen" title="no title" charset="utf-8">
+    <meta charset="UTF-8">
+    <title>faveFlix</title>    
 </head>
 <body>
   <div class="container">
@@ -48,7 +49,7 @@
             </div>
            <% }) %>
         </div>
-   <div class='row'>
+
         <div class='col-md-6' id="index-custom-search-input">
           <div class='input-group' id='search-box'>
             <form action="/tvshows/search" method="get">
@@ -58,12 +59,17 @@
           </form>
             <div id="q-results" class="results"></div>
           </div>
-        </div>
-        <div class='col-md-6'>
-            <h3 id='results'>RESULTS</h3>
-             <img src='https://unsplash.it/700/200/?random' alt="places" hspace="20">
-        </div>
-    </div>
+          <div class='col-md-3'>
+            <h3 id='likes'>LIKES</h3>
+             <img src='https://unsplash.it/250/250/?random' alt="places" hspace="20">
+            </div>
+            <div class="col-md-6"></div>
+            <div class='col-md-3'>
+            <h3 id='watchlist'>WATCHLIST</h3>
+             <img src='https://unsplash.it/250/250/?random' alt="places" hspace="20">
+            </div>
+          </div>
+
    
 </body>
 </html>

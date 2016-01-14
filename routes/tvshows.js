@@ -7,14 +7,18 @@ var MovieDB = require('moviedb')('782b6c90018378ce662350a3bc5cdc63');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
 	MovieDB.miscPopularTvs(function(err, searchRes){
+		console.log(searchRes);
 		topRates = searchRes.results;
+
   		res.render('index', {topRates:topRates});
 	});
 });
 // Popular page
 router.get('/popular',function(req,res){
 	MovieDB.miscPopularTvs(function(err, searchRes){
+
 		populars = searchRes.results;
+		console.log(populars);
 		res.render("tvshows/popular", {populars:populars});
 	});
 });
