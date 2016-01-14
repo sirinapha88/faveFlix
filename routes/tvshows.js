@@ -30,6 +30,15 @@ router.get('/newRelease',function(req,res){
 	});
 });
 
+// Highly Rated Page
+router.get('/topRated', function(req,res){
+	MovieDB.miscTopRatedTvs(function(err, searchRes){
+		topRates = searchRes.results;
+		res.render("tvshows/topRated" , {topRates:topRates});
+	});
+});
+
+
 router.get('/tvAiringToday',function(req,res){
 	request.get('http://api.themoviedb.org/3/tv/latest', function(err, response, body){
 		var input = JSON.parse(body);

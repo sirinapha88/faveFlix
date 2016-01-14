@@ -23,7 +23,7 @@
               <ul class="nav navbar-nav">
                   <li><a href="/tvshows/popular">Popular</a>
                   </li>
-                  <li><a href="#">Highly Rated</a>
+                  <li><a href="tvshows/topRated">Highly Rated</a>
                   </li>
               </ul>
               <ul class='nav navbar-nav navbar-right'>
@@ -41,11 +41,12 @@
       <div class='col-md-3'></div>
         <div class='col-md-6' id="index-custom-search-input">
           <div class='input-group' id='search-box'>
-            <form action="/tvshows/search" method="get">
-            <label for="tvshow"></label>
-            <input type="text" name="tvshow" placeholder="Enter TV Show Name" required>
-            <input type="submit" value="submit">
-            </form>
+              <form action="/tvshows/search" method="get" id='tvSearch'>
+              <label for="tvshow"></label>
+              <input type="text" id= 'tvshow' name="tvshow" placeholder="Search..." required>
+              <input type="submit" class="fa fa-search" value= '&#xf002' id='searchBtn'>
+                <!-- <i class="fa fa-search" id='searchBtn'></i> -->
+              </form>
             <div id="q-results" class="results"></div>
           </div>
       </div>
