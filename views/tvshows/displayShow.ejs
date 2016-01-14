@@ -36,7 +36,14 @@
               </ul>
           </div>
     </nav>
-    
+    <div class='input-group' id='display-search-box'>
+        <form action="/tvshows/search" method="get" id='tvSearch'>
+            <label for="tvshow"></label>
+            <input type="text" id= 'formTvshow' name="tvshow" placeholder="Search..." required>
+            <input type="submit" class="fa fa-search" value= '&#xf002' id='formSearchBtn'>
+        </form>
+        <div id="q-results" class="results"></div>
+    </div>
     <div id='fullResults'>
       <h2 id='results-header'>TV Shows Matching '<%= tvshowSearch %>' </h2>
         <div id='indieResults'>
@@ -60,7 +67,7 @@
               </button>
           </h4>
           <h4 id='date-aired'> First on Air: <%= tvshowList.first_air_date %> </h4>
-          <p id='showDescription'> <%= tvshowList.overview %> </p>
+          <p id='showDescription'><strong> <%= tvshowList.overview %> </strong></p>
           <% }) %>
         </div>
     </div>

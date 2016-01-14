@@ -53,9 +53,10 @@
               </form>
               <div id="q-results" class="results"></div>
           </div>
+          
           <br>
           <br>
-        <form id='signup-form'>
+        <form id='signup-form' action='/users/signup' method='POST'>
               <h4 id='signup-here'> SIGNUP USING EMAIL: </h4>
               <br>
               <div class="form-group">
@@ -74,7 +75,9 @@
           </form>
           <br>
           <h4 id='fb-signup'> LOGIN USING FACEBOOK: </h4>
-          <img id='fb-btn' src='http://www.bon-app.com/bonapp2/images/social-media/facebook-signup-button.png'>
+          <a href="/auth/facebook">
+            <img id='fb-btn' src='http://www.bon-app.com/bonapp2/images/social-media/facebook-signup-button.png'>
+            </a>
       </div>
     </div>
   </div>
