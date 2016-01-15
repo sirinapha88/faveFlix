@@ -22,13 +22,6 @@ router.get('/popular',function(req,res){
 		res.render("tvshows/popular", {populars:populars});
 	});
 });
-// New Release page
-// router.get('/newRelease',function(req,res){
-// 	MovieDB.miscTopRatedTvs(function(err, searchRes){
-// 		topRates = searchRes.results;
-// 		res.render("tvshows/newRelease" , {topRates:topRates});
-// 	});
-// });
 
 
 router.get('/topRated', function(req,res){
