@@ -215,6 +215,13 @@ a{
 	color: #46b8da;
 }
 
+#favorites{
+	color: #46b8da;
+	margin-top: 6%;
+	margin-bottom: 0px;
+	margin-left: 2%;
+}
+
 #watchMe{
 	border: 0px;
 	padding: 0px;
