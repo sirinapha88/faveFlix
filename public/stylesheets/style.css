@@ -10,10 +10,29 @@
 
 .header{
 	padding-bottom: 10px;
+	color: #46b8da;
 }
 
 .logo{
 	padding-left: 10px;
+}
+
+#faveFlix{
+	font-color: #46b8da;
+}
+
+a{
+	color: #46b8da;
+}
+
+#navbar{
+	background-color: #46b8da;
+	border-color: #46b8da;
+}
+
+#bs-example-navbar-collapse-1{
+	background-color: #46b8da;
+	border-color: #46b8da;
 }
 
 #left-nav-items{
@@ -89,13 +108,13 @@
 #title{
 	
 	word-wrap: break-word;
-	color: #2FA4E7;
+	color: #46b8da;
 	letter-spacing: 0px;
 }
 
 #about-f-f{
 	text-align: center;
-	color: #2FA4E7;
+	color: #46b8da;
 }
 
 
@@ -107,28 +126,29 @@
 #signup-here{
 	letter-spacing: 1px;
 	text-align: center;
-	color: #2FA4E7;
+	color: #46b8da;
 }
 
 #signup-btn{
-	position: relative;
-	left: 50%;
+	/*position: relative;*/
+	margin-left: 45%;
 	letter-spacing: 1px;
 }
 
 #fb-signup{
 	text-align: center;
-	color: #2FA4E7;
+	color: #46b8da;
 	letter-spacing: 1px;
 }
 
 #fb-btn{
-	position: absolute;
-	left: 50%;
+	/*position: absolute;*/
+	margin-left: 35%;
+	height: 40px;
 }
 
 #signup-custom-search-input{
-	margin-top: 3%;
+	/*margin-top: 1%;*/
 	margin-left: 70px;
 }
 
@@ -139,11 +159,11 @@
 #login-here{
 	letter-spacing: 1px;
 	text-align: center;
-	color: #2FA4E7;
+	color: #46b8da;
 }
 
 #login-custom-search-input{
-	margin-top: 3%;
+/*	margin-top: 3%;*/
 	margin-left: 70px;
 }
 
@@ -154,31 +174,31 @@
 #likes{
 	text-align: center;
 	margin-top: 50%;
-	color: #2FA4E7;
+	color: #46b8da;
 }
 
 #watchlist{
 	text-align: center;
 	margin-top: 50%;
-	color: #2FA4E7;
+	color: #46b8da;
 }
 
 #results{
 	margin-top: 10%;
 	margin-left: relative;
-	color: #2FA4E7;
+	color: #46b8da;
 }
 
 #popular{
 	margin-top: 10%;
 	margin-left: relative;
-	color: #2FA4E7;
+	color: #46b8da;
 }
 
 #highly-rated{
 	margin-top: 10%;
 	margin-left: relative;
-	color: #2FA4E7;
+	color: #46b8da;
 }
 
 #favorite{
@@ -203,7 +223,7 @@
 
 	font-weight: 700px;
 	letter-spacing: 1px;
-	color: #2FA4E7;
+	color: #46b8da;
 }
 
 
@@ -211,27 +231,27 @@
 	
 	font-weight: 700px;
 	letter-spacing: 1px;
-	color: #2FA4E7;
+	color: #46b8da;
 }
 
 #results{
 	
 	font-weight: 700px;
 	letter-spacing: 1px;
-	color: #2FA4E7;
+	color: #46b8da;
 }
 
 #highly-rated{
 	
 	font-weight: 700px;
 	letter-spacing: 1px;
-	color: #2FA4E7;
+	color: #46b8da;
 }
 
 #results-header{
 	font-weight: 900px;
 	letter-spacing: 1px;
-	color: #2FA4E7;
+	color: #46b8da;
 }
 
 #indieResults{
@@ -239,7 +259,12 @@
 
 }
 
-#showDescription{
-	font-weight: 700px;
+#topRatedPosters{
+	color: #46b8da;
 }
+
+#popularPosters{
+	color: #46b8da;
+}
+
 
