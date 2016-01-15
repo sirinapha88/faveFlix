@@ -56,10 +56,11 @@
               <% } %>
           <h4 id='rating'> Rating: <%= tvshowList.vote_average %>
               &nbsp;
-              <button type="button" class="btn btn-default btn-lg" id='favorite'>
-                  <a href="/users/profile"
-                  <span class="fa fa-heart" style="color:#46b8da;" data-tmdbID="<%=tvshowList.id %>"></span></a>
-              </button>
+             <form action="/users/profile" method="post" id='heartBtn'>
+            <input type="submit" class="btn btn-default btn-lg fa fa-heart" value='&#xf004;' id='favorite'>
+            <input type="hidden" name="tmdbID" value="<%=tvshowList.id %>">
+            <!-- <a href="/users/profile"<span  style="color:#46b8da;"></span></a> -->
+          </form>
               &nbsp;
               <button type="button" class="btn btn-default btn-lg" id='watchMe'>
                   <a href="/users/profile"
