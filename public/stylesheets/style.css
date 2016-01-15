@@ -203,10 +203,16 @@ a{
 	color: #46b8da;
 }
 
+
+/*#heartBtn{
+	float: left;
+}*/
+
 #favorite{
 	border: 0px;
 	padding: 0px;
 	outline: none;
+	color: #46b8da;
 }
 
 #watchMe{
