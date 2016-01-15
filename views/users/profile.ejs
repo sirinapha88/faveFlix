@@ -24,51 +24,57 @@
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                  <li><a href="#">Popular</a>
+                  <li><a href="/tvshows/popular">Popular</a>
                   </li>
-                  <li><a href="#">Highly Rated</a>
+                  <li><a href="/tvshows/topRated">Highly Rated</a>
                   </li>
               </ul>
                   <ul class='nav navbar-nav navbar-right'>
-                    <li><h3> Welcome  <%= myshows.name %> </h3>
-                    </li>
-                  
-                    <li><a href="#">Logout</a>
+                    <% if(usershow[0] === undefined){ %>
+                      <li style="color:white;"> Welcome 
+                      </li>
+                    <% } else { %>
+                      <li style="color:white;"> Welcome <%= usershow[0].name%>
+                      </li>
+                    <% } %>
+                    <li><a href="/users/logout">Logout</a>
                     </li>
                   </ul>
       
           </div>
     </nav>
-      <div class='col-md-3' id='poster-streams'>
-           <% topRates.forEach(function(topRate){ %>
-            <div>
-              <img id ='index-posters-signup'src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="300" width="250" >
-              <h4> <%= topRate.name %></h4>
-              <h6> Rating: <%= topRate.vote_average %></h6>
-            </div>
-           <% }) %>
-        </div>
-
+      
+        
+    <div class='row'>
+      <div class='col-md-3'></div>
         <div class='col-md-6' id="index-custom-search-input">
           <div class='input-group' id='search-box'>
-            <form action="/tvshows/search" method="get">
-              <label for="tvshow"></label>
-              <input type="text" name="tvshow" placeholder="Enter TV Show Name" required class='search-query form control'/>
-              <input type="submit" value="submit">
-          </form>
+              <form action="/tvshows/search" method="get" id='tvSearch'>
+                  <label for="tvshow"></label>
+                  <input type="text" id='tvshow' name="tvshow" placeholder="   Search..." required>
+                  <input type="submit" class="fa fa-search" value= '&#xf002' id='searchBtn'>
+              </form>
             <div id="q-results" class="results"></div>
           </div>
-          <div class='col-md-3'>
+      </div>
+    </div>
 
-          <%= myshows[0].name%>
+
+          <div class='col-md-3' id='index-poster-profile'>
+  
+          <% myshows.forEach(function(myshow){ %>
+          <img id ='index-posters'src="http://image.tmdb.org/t/p/w500<%= myshow.poster %>" height="360" width="260" >
+          <h4 id='title'> <%= myshow.name%> 
+
+          &nbsp;
+              <button type="button" class="btn btn-default btn-lg" id='watchMe'>
+                  <a href="/users/profile"
+                  <span class="fa fa-eye" style="color:#46b8da;" data-tmdbID="<%=myshow.tmdbID %>"></span></a>
+              </button>
+              </h4>
+          <% }); %>
           
-          
-          
-
-
-
-
-            </div>
+          </div>
           </div>
 
    

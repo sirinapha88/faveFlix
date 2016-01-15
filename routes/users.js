@@ -40,6 +40,7 @@ router.get('/login', function (req,res){
 });
 
 router.post('/login', function(req, res, next){
+  
   Users().where({
     email: req.body.email,
   }).first().then(function(user){
@@ -53,65 +54,54 @@ router.post('/login', function(req, res, next){
       }
     }
      else {
-      res.redirect('/signup?error=Invalid Email or Password.');
+      res.redirect('/users/signup');
     }
   });
 });
 
-// show user show
-// router.get('/',function(req,res){
-//   knex('usershows').then(function(usershow){
-//     res.render('users/profile',{usershow:usershow});
-//   });
-// });
 
 /* GET users listing. */
 router.get('/profile', function(req, res, next) {
-  if(req.signedCookies.userID) {
+    if(req.signedCookies.userID) {
     var id = req.signedCookies.userID;
-    
+
     knex("users")
     .rightOuterJoin('usershows', 'usershows.user_id','users.id')
     .where({user_id:id}).then(function(usershow){
-      
+
       if(!usershow){
-        console.log("IM IN HERE")
         res.redirect('/users/login');
       }
       else{
-        console.log("IM IN HERE")
         var myshows = [];
-        var myprofile = {};
-
-        // console.log(usershow)
-
-      
-
-        for (var i = 0; i < usershow.length; i++) {
-          MovieDB.tvInfo({id: usershow[i].tmdbID}, function(err, searchRes){
-            console.log("inside api function", searchRes.name)
-            console.log("inside api function", searchRes.id)
-            console.log("inside api function", searchRes.poster_path)
-            myprofile.name = searchRes.name,
-            myprofile.tmdbID = searchRes.id,
-            myprofile.poster = searchRes.poster_path
-            
-            myshows.push(myprofile); 
-
-            console.log(myprofile) 
-            console.log(myshows); 
-
-          });                    
+        var counter = 0;
+        if(usershow.length > 0){
+          for (var i = 0; i < usershow.length; i++) {
+            MovieDB.tvInfo({id: usershow[i].tmdbID}, function(err, searchRes){
+              var myprofile = {
+                name: searchRes.name,
+                tmdbID: searchRes.id,
+                poster: searchRes.poster_path
+              };
+              counter++;
+              myshows.push(myprofile);
+              
+              if( counter === usershow.length) {
+               res.render('users/profile',{myshows:myshows, usershow:usershow});
+              } //--end if 
+            }); //--end movie search   
+          } //--end for loop
+        } else{
+          res.render('users/profile',{myshows:myshows, usershow:usershow});
         }
-
-        res.render('users/profile',{myshows:myshows});
-        // console.log(myshows);
-      }
-
-    });
+      } //--end else
+    }); //--end knex
+  }
+  else{
+    console.log("user id:");
+    console.log(req.signedCookies.userID);
   }
 });
-
 
 
 router.post('/profile', function(req,res){
@@ -123,45 +113,27 @@ router.post('/profile', function(req,res){
     knex('users').where({id:id}).then(function(usershow){
       if(!usershow){
         res.redirect('/users/login');
-      } else {
-        knex('usershows').insert({
-          user_id:id,
-          tmdbID: tvshowID.tmdbID,
-          isFavorite: 'true'
-        }).then(function(){
-          res.redirect('/users/profile');
-        //   MovieDB.tvInfo({id: tvshowID.tmdbID}, function(err, searchRes){
-        // // console.log(searchRes)
-        // var poster = searchRes.poster_path;
-        //   res.render('users/profile',{usershow:usershow, poster:poster});
-        // });
-      });
-    
-      }
+      } 
+      else {
+          knex('usershows').insert({
+            user_id:id,
+            tmdbID: tvshowID.tmdbID,
+            isFavorite: 'true',
+            hasWatched: 'false'
+          }).then(function(){
+              res.redirect('/users/profile');
+          });  
+        }
     });
+  } else {
+    res.redirect('/users/login');
   }
 });
 
-
-// router.get('/:id', function(req, res){
-//   if(req.signedCookies.userID === req.params.id) {
-//     Users().where('id', req.params.id).first().then(function(user){
-//       if(user) {
-//         delete user.password;
-//         res.json(user);
-//       } else {
-//         res.status(404);
-//         res.json({ message: 'not found' });
-//       }
-//     }).catch(function(error){
-//       res.status(404);
-//       res.json({ message: error.message });
-//     });
-//   } else {
-//     res.status(401);
-//     res.json({ message: 'not allowed' });
-//   }
-// });
+router.get('/logout', function(req, res){
+  res.clearCookie('userID');
+  res.redirect('/');
+});
 
 
 module.exports = router;

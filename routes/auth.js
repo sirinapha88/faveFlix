@@ -18,12 +18,16 @@ router.get('/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication
-    console.log(req.body);
-    // res.redirect('/users/profile');
+    console.log(req.user.facebook_id);
+    if(req.isAuthenticated()){
+      console.log("I am authenticated");
+    }
+    res.cookie('userID', req.user.id, { signed: true });
+    res.redirect('/users/profile');
   });
 
 router.get('/logout', function(req, res){
-  req.logout();
+  res.clearCookie('userID');
   res.redirect('/');
 });
 

@@ -18,10 +18,14 @@ var Users = function () {
 
 passport.serializeUser(function(user, done) {
   done(null, user);
+  
 });
 
 passport.deserializeUser(function(user, done) {
-  done(null, user);
+  // console.log(user.id);
+  // Users().where({id:user.id}).then(function(user,err){
+    done(null, user);
+  // });  
 });
 
 // config
@@ -37,8 +41,9 @@ passport.use(new FacebookStrategy({
         if(err)
           done(err);
         if(user[0]) {
-          console.log(user[0])
-          return done(null, user[0]);
+          // res.cookie('userID', user.id, { signed: true });
+          // res.render('users/profile');
+          return done(null, user[0]); //?
         } else {
           Users().insert({facebook_id: profile.id, name: profile.displayName, email: profile.emails}).then(function() {
             Users().where({facebook_id: profile.id}).then(function(data) {

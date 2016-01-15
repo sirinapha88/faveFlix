@@ -12,13 +12,7 @@
     <div class='header'>
         <h1><a href="/">faveFlix</a><img class='logo' src="https://image.freepik.com/free-icon/eye-outline-variant-with-heart-shaped-center_318-47710.jpg" alt="heart-eye" style="width:50px;height:50px;"></h1>
     </div>
-    <nav class="navbar navbar-default">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-              <span class="sr-only">Toggle navigation</span>
-            </button>
-          </div>
-
+    <nav class="navbar navbar-default" id='navbar'>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav" id='left-nav-items'>
                   <li><a href="/tvshows/popular">Popular</a>
@@ -63,10 +57,11 @@
           <h6 id='rating'> Rating: <%= topRate.vote_average %>
           &nbsp;
           &nbsp;
-              <button type="button" class="btn btn-default btn-lg" id='favorite'>
-                  <a href="/users/profile"
-                  <span class="fa fa-heart" style="color:#46b8da;" data-tmdbID="<%=topRate.id %>"></span></a>
-              </button>
+          <form action="/users/profile" method="post">
+            <input type="submit" class="btn btn-default btn-lg fa fa-heart" value='&#xf004;'>
+            <input type="hidden" name="tmdbID" value="<%=topRate.id %>">
+            <!-- <a href="/users/profile"<span  style="color:#46b8da;"></span></a> -->
+          </form>
           &nbsp;
           &nbsp;
               <button type="button" class="btn btn-default btn-lg" id='watchMe'>
@@ -80,3 +75,4 @@
     </div>
 </body>
 </html>
+
