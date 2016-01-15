@@ -39,6 +39,11 @@ a{
 	margin-top: 8%
 }
 
+#noUsername{
+	letter-spacing: 1px;
+	margin-top: 10%
+}
+
 #logout{
 	letter-spacing: 1px;
 }

@@ -22,7 +22,7 @@
               </ul>
                   <ul class='nav navbar-nav navbar-right'>
                     <% if(usershow[0] === undefined){ %>
-                      <li style="color:white;"> Welcome 
+                      <li style="color:white;" id='noUsername'> Welcome!
                       </li>
                     <% } else { %>
                       <li style="color:white;" id='username'> Welcome <%= usershow[0].name%>
@@ -59,21 +59,18 @@
           </button>
         </h2>
         <div class='col-md-12' id='index-poster-rows'>
-        <% topRates.forEach(function(topRate){ %>
+        <% myshows.forEach(function(myshow){ %>
         <div>
-          <img id ='index-posters'src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="360" width="270" >
-          <h4 id='title'> <%= topRate.name %>
-             <!-- <form action="/users/profile" method="post" id='heartBtn'>
-            <input type="submit" class="btn btn-default btn-lg fa fa-heart" value='&#xf004;' id='favorite'>
-            <input type="hidden" name="tmdbID" value="<%=topRate.id %>">
-            <!-- <a href="/users/profile"<span  style="color:#46b8da;"></span></a> -->
+           <img id ='index-posters'src="http://image.tmdb.org/t/p/w500<%= myshow.poster %>" height="360" width="260" >
+          <h4 id='title'> <%= myshow.name%> 
+    
           
           </h4>
 
-          <h6 id='rating'> Rating: <%= topRate.vote_average %>
+          <h6 id='rating'> Rating: <%= myshow.vote_average %>
               <button type="button" class="btn btn-default btn-lg" id='watchMe'>
                   <a href="/users/profile"
-                  <span class="fa fa-eye" style="color:#46b8da;" data-tmdbID="<%=topRate.id %>"></span></a>
+                  <span class="fa fa-eye" style="color:#46b8da;" data-tmdbID="<%=myshow.id %>"></span></a>
               </button>
           </h6>
         </div>
@@ -81,21 +78,7 @@
       </div>
     </div>
   
-        <!--   <% myshows.forEach(function(myshow){ %>
-          <img id ='index-posters'src="http://image.tmdb.org/t/p/w500<%= myshow.poster %>" height="360" width="260" >
-          <h4 id='title'> <%= myshow.name%> 
-
-          &nbsp;
-              <button type="button" class="btn btn-default btn-lg" id='watchMe'>
-                  <a href="/users/profile"
-                  <span class="fa fa-eye" style="color:#46b8da;" data-tmdbID="<%=myshow.tmdbID %>"></span></a>
-              </button>
-              </h4>
-          <% }); %> -->
-          
-          <!-- </div>
-          </div> -->
-
+      
    
 </body>
 </html>
