@@ -23,12 +23,21 @@ router.get('/popular',function(req,res){
 	});
 });
 // New Release page
-router.get('/newRelease',function(req,res){
+// router.get('/newRelease',function(req,res){
+// 	MovieDB.miscTopRatedTvs(function(err, searchRes){
+// 		topRates = searchRes.results;
+// 		res.render("tvshows/newRelease" , {topRates:topRates});
+// 	});
+// });
+
+
+router.get('/topRated', function(req,res){
 	MovieDB.miscTopRatedTvs(function(err, searchRes){
 		topRates = searchRes.results;
-		res.render("tvshows/newRelease" , {topRates:topRates});
+		res.render("tvshows/topRated" , {topRates:topRates});
 	});
 });
+
 
 router.get('/tvAiringToday',function(req,res){
 	request.get('http://api.themoviedb.org/3/tv/latest', function(err, response, body){
@@ -48,12 +57,13 @@ router.get('/search',function(req,res){
   });
 
 router.get('/search/:searchString', function(req,res){
-	var tvshowSearch = req.params.searchString;
 
+	var tvshowSearch = req.params.searchString;
+	console.log(tvshowSearch);
 	MovieDB.searchTv({query: tvshowSearch },function(err, searchRes){
 		tvshowLists = searchRes.results;
 		console.log("this is " + tvshowLists[0].id);
-  		res.render('tvshows/displayShow', {tvshowLists:tvshowLists});
+  		res.render('tvshows/displayShow', {tvshowLists:tvshowLists,tvshowSearch:tvshowSearch});
 	});
 });
 

@@ -20,8 +20,8 @@ passport.serializeUser(function(user, done) {
   done(null, user);
 });
 
-passport.deserializeUser(function(obj, done) {
-  done(null, obj);
+passport.deserializeUser(function(user, done) {
+  done(null, user);
 });
 
 // config
@@ -31,12 +31,13 @@ passport.use(new FacebookStrategy({
   callbackURL: config.facebook.callbackURL
   },
   function(accessToken, refreshToken, profile, done) {
-    console.log(profile);
+    
     process.nextTick(function () {
       Users().where({facebook_id: profile.id}).then(function(user, err) {
         if(err)
           done(err);
         if(user[0]) {
+          console.log(user[0])
           return done(null, user[0]);
         } else {
           Users().insert({facebook_id: profile.id, name: profile.displayName, email: profile.emails}).then(function() {

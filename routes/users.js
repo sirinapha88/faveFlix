@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex');
 var bcrypt = require('bcrypt');
+var MovieDB = require('moviedb')('782b6c90018378ce662350a3bc5cdc63');
+
 
 
 var Users = function () {
@@ -42,10 +44,10 @@ router.post('/login', function(req, res, next){
     email: req.body.email,
   }).first().then(function(user){
     if(user) {
-      //bcrypt.compareSync will hash the plain text password and compare
+      // bcrypt.compareSync will hash the plain text password and compare
       if(bcrypt.compareSync(req.body.password, user.password)) {
         res.cookie('userID', user.id, { signed: true });
-        res.render('users/profile');
+        res.redirect('/users/profile');
       } else {
         res.redirect('/profile?error=Invalid Email or Password.');
       }
@@ -56,46 +58,90 @@ router.post('/login', function(req, res, next){
   });
 });
 
+// show user show
+// router.get('/',function(req,res){
+//   knex('usershows').then(function(usershow){
+//     res.render('users/profile',{usershow:usershow});
+//   });
+// });
 
 /* GET users listing. */
 router.get('/profile', function(req, res, next) {
-  console.log(req);
   if(req.signedCookies.userID) {
     var id = req.signedCookies.userID;
-    knex('usershows').where({user_id:id}).then(function(user){
-      if(!user){
+    
+    knex("users")
+    .rightOuterJoin('usershows', 'usershows.user_id','users.id')
+    .where({user_id:id}).then(function(usershow){
+      
+      if(!usershow){
+        console.log("IM IN HERE")
+        res.redirect('/users/login');
+      }
+      else{
+        console.log("IM IN HERE")
+        var myshows = [];
+        var myprofile = {};
+
+        // console.log(usershow)
+
+      
+
+        for (var i = 0; i < usershow.length; i++) {
+          MovieDB.tvInfo({id: usershow[i].tmdbID}, function(err, searchRes){
+            console.log("inside api function", searchRes.name)
+            console.log("inside api function", searchRes.id)
+            console.log("inside api function", searchRes.poster_path)
+            myprofile.name = searchRes.name,
+            myprofile.tmdbID = searchRes.id,
+            myprofile.poster = searchRes.poster_path
+            
+            myshows.push(myprofile); 
+
+            console.log(myprofile) 
+            console.log(myshows); 
+
+          });                    
+        }
+
+        res.render('users/profile',{myshows:myshows});
+        // console.log(myshows);
+      }
+
+    });
+  }
+});
+
+
+
+router.post('/profile', function(req,res){
+  
+  var tvshowID = req.body;
+  
+  if(req.signedCookies.userID) {
+    var id = req.signedCookies.userID;
+    knex('users').where({id:id}).then(function(usershow){
+      if(!usershow){
         res.redirect('/users/login');
       } else {
         knex('usershows').insert({
-          tmdbID: 'name',
+          user_id:id,
+          tmdbID: tvshowID.tmdbID,
           isFavorite: 'true'
-        });
+        }).then(function(){
+          res.redirect('/users/profile');
+        //   MovieDB.tvInfo({id: tvshowID.tmdbID}, function(err, searchRes){
+        // // console.log(searchRes)
+        // var poster = searchRes.poster_path;
+        //   res.render('users/profile',{usershow:usershow, poster:poster});
+        // });
+      });
+    
       }
     });
   }
 });
 
-router.post('/profile', function(req, res, next) {
-  res.end(JSON.stringify(req.body));
-})
-
-
-// router.get('/profile',function(req,res){
-
-//     var idQuery = req.query.tmdbID;
-//     console.log(idQuery)
-//     res.redirects('/users/profile/' + idQuery);
-//   });
-
-// router.get('/search/:searchString', function(req,res){
-//   var tvshowSearch = req.params.searchString;
-
-//   MovieDB.searchTv({query: tvshowSearch },function(err, searchRes){
-//     tvshowLists = searchRes.results;
-//     console.log("this is " + tvshowLists[0].id);
-//       res.render('tvshows/displayShow', {tvshowLists:tvshowLists});
-//   });
-// });
 
 // router.get('/:id', function(req, res){
 //   if(req.signedCookies.userID === req.params.id) {

@@ -53,25 +53,25 @@
 
     <div class='row'>
       <div class='col-md-12' id='index-poster-rows'>
-        <% populars.forEach(function(popular){ %>
+        <% topRates.forEach(function(topRate){ %>
         <div>
-          <img id ='index-posters'src="http://image.tmdb.org/t/p/w500<%= popular.poster_path %>" height="360" width="260" >
-          <h4 id='title'> <%= popular.name %>
+          <img id ='index-posters'src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="360" width="260" >
+          <h4 id='title'> <%= topRate.name %>
           
           </h4>
 
-          <h6 id='rating'> Rating: <%= popular.vote_average %>
+          <h6 id='rating'> Rating: <%= topRate.vote_average %>
           &nbsp;
           &nbsp;
               <button type="button" class="btn btn-default btn-lg" id='favorite'>
                   <a href="/users/profile"
-                  <span class="fa fa-heart" style="color:#46b8da;" data-tmdbID="<%=popular.id %>"></span></a>
+                  <span class="fa fa-heart" style="color:#46b8da;" data-tmdbID="<%=topRate.id %>"></span></a>
               </button>
           &nbsp;
           &nbsp;
               <button type="button" class="btn btn-default btn-lg" id='watchMe'>
                   <a href="/users/profile"
-                  <span class="fa fa-eye" style="color:#46b8da;" data-tmdbID="<%=popular.id %>"></span></a>
+                  <span class="fa fa-eye" style="color:#46b8da;" data-tmdbID="<%=topRate.id %>"></span></a>
               </button>
           </h6>
         </div>

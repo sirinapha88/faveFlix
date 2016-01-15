@@ -30,11 +30,10 @@
                   </li>
               </ul>
                   <ul class='nav navbar-nav navbar-right'>
-                    <li><a href="#">Profile</a>
+                    <li><h3> Welcome  <%= myshows.name %> </h3>
                     </li>
-                    <li><a href="#">Login</a>
-                    </li>
-                    <li><a href="#">Signup</a>
+                  
+                    <li><a href="#">Logout</a>
                     </li>
                   </ul>
       
@@ -60,13 +59,15 @@
             <div id="q-results" class="results"></div>
           </div>
           <div class='col-md-3'>
-            <h3 id='likes'>LIKES</h3>
-             <img src='https://unsplash.it/250/250/?random' alt="places" hspace="20">
-            </div>
-            <div class="col-md-6"></div>
-            <div class='col-md-3'>
-            <h3 id='watchlist'>WATCHLIST</h3>
-             <img src='https://unsplash.it/250/250/?random' alt="places" hspace="20">
+
+          <%= myshows[0].name%>
+          
+          
+          
+
+
+
+
             </div>
           </div>
 

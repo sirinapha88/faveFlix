@@ -1,6 +1,10 @@
-
-.dropdown{
-	padding-left: 55em;
+body{
+	font-family: Trebuchet MS;
+	color: #2FA4E7;
+	letter-spacing: 1px;
+}
+.user-commands{
+	margin-right: 10px;
 }
 
 .header{
@@ -11,19 +15,81 @@
 	padding-left: 10px;
 }
 
-#search-box{
-	margin-top: 50px;
+#left-nav-items{
+	font-family: Trebuchet MS;
+	letter-spacing: 1px;
 }
 
+#right-nav-items{
+	font-family: Trebuchet MS;
+	letter-spacing: 1px;
+}
+
+#search-box{
+	margin-top: 50px;
+	margin-left: 0px;
+}
+
+#tvshow{
+	width: 500px;
+	height: 38px;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+
+
+#formTvshow{
+    width: 475px;
+    height: 38px;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+#formSearchBtn{
+	border: 50px;
+	padding: 11px;
+	border-radius: 4px;
+}
+
+#searchBtn{
+	border: 50px;
+	padding: 11px;
+	border-radius: 4px;
+}
+
+
+
 #index-poster-rows{
-	
+	margin-top: 70px;
 	display: flex;
    	flex-flow: row wrap;
-	justify-content: space-around;
+   	justify-content: space-around;
 }
 
 #index-posters{
 	float:left;
+}
+
+#title{
+	font-family: Trebuchet MS;
+	word-wrap: break-word;
+	color: #2FA4E7;
+	letter-spacing: 0px;
 }
 
 #about-f-f{
@@ -38,7 +104,7 @@
 }
 
 #signup-here{
-
+	letter-spacing: 1px;
 	text-align: center;
 	color: #2FA4E7;
 }
@@ -46,11 +112,13 @@
 #signup-btn{
 	position: relative;
 	left: 50%;
+	letter-spacing: 1px;
 }
 
 #fb-signup{
 	text-align: center;
 	color: #2FA4E7;
+	letter-spacing: 1px;
 }
 
 #fb-btn{
@@ -68,7 +136,7 @@
 }
 
 #login-here{
-
+	letter-spacing: 1px;
 	text-align: center;
 	color: #2FA4E7;
 }
@@ -82,10 +150,66 @@
 	margin-top: 8%;
 }
 
+#likes{
+	text-align: center;
+	margin-top: 50%;
+	color: #2FA4E7;
+}
+
+#watchlist{
+	text-align: center;
+	margin-top: 50%;
+	color: #2FA4E7;
+}
+
+#results{
+	margin-top: 10%;
+	margin-left: relative;
+	color: #2FA4E7;
+}
+
+#popular{
+	margin-top: 10%;
+	margin-left: relative;
+	color: #2FA4E7;
+}
+
+#highly-rated{
+	margin-top: 10%;
+	margin-left: relative;
+	color: #2FA4E7;
+}
+
+#favorite{
+	border: 0px;
+	padding: 0px;
+	outline: none;
+}
+
+#watchMe{
+	border: 0px;
+	padding: 0px;
+}
+
+#rating{
+	margin-right: 10px;
+}
 
 
+#popular{
+	font-family: Trebuchet MS;
+	font-weight: 700px;
+	letter-spacing: 1px;
+}
 
-/*THIS IS FOR THE INDEX PAGE TV SHOW POSTERS*/
-/*#index-posters{
-	float:left;
+#results{
+	font-family: Trebuchet MS;
+	font-weight: 700px;
+	letter-spacing: 1px;
+}
+
+#highly-rated{
+	font-family: Trebuchet MS;
+	font-weight: 700px;
+	letter-spacing: 1px;
 }

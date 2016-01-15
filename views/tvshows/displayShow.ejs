@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="container-fluid">
-  <h2> Searching TV Show</h2>
+  <h2> Searching TV Show <%= tvshowSearch %></h2>
   <% tvshowLists.forEach(function(tvshowList){ %>
 	<h3> <%= tvshowList.name %></h3>
   <% if(tvshowList.poster_path === null) { %>
