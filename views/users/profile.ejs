@@ -12,18 +12,9 @@
     <div class='header'>
         <h1><a href="/">faveFlix</a><img class='logo' src="https://image.freepik.com/free-icon/eye-outline-variant-with-heart-shaped-center_318-47710.jpg" alt="heart-eye" style="width:50px;height:50px;"></h1>
     </div>
-    <nav class="navbar navbar-default">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
-
+   <nav class="navbar navbar-default" id='navbar'>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
+              <ul class="nav navbar-nav" id='left-nav-items'>
                   <li><a href="/tvshows/popular">Popular</a>
                   </li>
                   <li><a href="/tvshows/topRated">Highly Rated</a>
@@ -34,10 +25,10 @@
                       <li style="color:white;"> Welcome 
                       </li>
                     <% } else { %>
-                      <li style="color:white;"> Welcome <%= usershow[0].name%>
+                      <li style="color:white;" id='username'> Welcome <%= usershow[0].name%>
                       </li>
                     <% } %>
-                    <li><a href="/users/logout">Logout</a>
+                    <li id='logout'><a href="/users/logout">Logout</a>
                     </li>
                   </ul>
       

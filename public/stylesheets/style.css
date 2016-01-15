@@ -34,6 +34,15 @@ a{
 	letter-spacing: 1px;
 }
 
+#username{
+	letter-spacing: 1px;
+	margin-top: 8%
+}
+
+#logout{
+	letter-spacing: 1px;
+}
+
 #right-nav-items{
 	
 	letter-spacing: 1px;
@@ -219,7 +228,7 @@ a{
 	color: #46b8da;
 	margin-top: 6%;
 	margin-bottom: 0px;
-	margin-left: 2%;
+	margin-left: 35%;
 }
 
 #watchMe{
