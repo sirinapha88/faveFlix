@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -10,44 +11,155 @@ img {
 	width: 80;
 	height: 110;
 
+=======
+>>>>>>> backend
 .user-commands{
 	margin-right: 10px;
 }
 
 .header{
 	padding-bottom: 10px;
+	color: #46b8da;
 }
 
 .logo{
 	padding-left: 10px;
 }
 
+#faveFlix{
+	font-color: #46b8da;
+}
+
+a{
+	color: #46b8da;
+}
+
+#navbar{
+	background-color: #46b8da;
+	border-color: #46b8da;
+}
+
+#bs-example-navbar-collapse-1{
+	background-color: #46b8da;
+	border-color: #46b8da;
+}
+
+#left-nav-items{
+	
+	letter-spacing: 1px;
+}
+
+#username{
+	letter-spacing: 1px;
+	margin-top: 8%
+}
+
+#noUsername{
+	letter-spacing: 1px;
+	margin-top: 10%
+}
+
+#logout{
+	letter-spacing: 1px;
+}
+
+#right-nav-items{
+	
+	letter-spacing: 1px;
+}
+
 #search-box{
 	margin-top: 50px;
 	margin-left: 0px;
+<<<<<<< HEAD
 /*	padding: 10px;*/
+=======
+>>>>>>> backend
 }
+
+#tvshow{
+	width: 500px;
+	height: 38px;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+
+
+#formTvshow{
+    width: 475px;
+    height: 38px;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+#formSearchBtn{
+	border: 50px;
+	padding: 11px;
+	border-radius: 4px;
+}
+
+#searchBtn{
+	border: 50px;
+	padding: 11px;
+	border-radius: 4px;
+}
+
+
 
 #index-poster-rows{
 	margin-top: 70px;
 	display: flex;
    	flex-flow: row wrap;
    	justify-content: space-around;
+<<<<<<< HEAD
    	/*word-wrap: break-word;*/
 
+=======
+}
+
+#index-poster-profile{
+	margin-top: 70px;
+	display: flex;
+  	flex-flow: row wrap;
+  	justify-content: flex-end;
+>>>>>>> backend
 }
 
 #index-posters{
 	float:left;
 }
 
+<<<<<<< HEAD
 #title{
 	word-wrap: break-word;
+=======
+
+#title{
+	
+	word-wrap: break-word;
+	color: #46b8da;
+	letter-spacing: 0px;
+>>>>>>> backend
 }
 
 #about-f-f{
 	text-align: center;
-	color: #2FA4E7;
+	color: #46b8da;
 }
 
 
@@ -57,28 +169,31 @@ img {
 }
 
 #signup-here{
-
+	letter-spacing: 1px;
 	text-align: center;
-	color: #2FA4E7;
+	color: #46b8da;
 }
 
 #signup-btn{
-	position: relative;
-	left: 50%;
+	/*position: relative;*/
+	margin-left: 45%;
+	letter-spacing: 1px;
 }
 
 #fb-signup{
 	text-align: center;
-	color: #2FA4E7;
+	color: #46b8da;
+	letter-spacing: 1px;
 }
 
 #fb-btn{
-	position: absolute;
-	left: 50%;
+	/*position: absolute;*/
+	margin-left: 35%;
+	height: 40px;
 }
 
 #signup-custom-search-input{
-	margin-top: 3%;
+	/*margin-top: 1%;*/
 	margin-left: 70px;
 }
 
@@ -87,13 +202,13 @@ img {
 }
 
 #login-here{
-
+	letter-spacing: 1px;
 	text-align: center;
-	color: #2FA4E7;
+	color: #46b8da;
 }
 
 #login-custom-search-input{
-	margin-top: 3%;
+/*	margin-top: 3%;*/
 	margin-left: 70px;
 }
 
@@ -104,6 +219,7 @@ img {
 #likes{
 	text-align: center;
 	margin-top: 50%;
+<<<<<<< HEAD
 	color: #2FA4E7;
 }
 
@@ -131,11 +247,56 @@ img {
 	color: #2FA4E7;
 }
 
+=======
+	color: #46b8da;
+}
+
+#watchlist{
+	text-align: center;
+	margin-top: 50%;
+	color: #46b8da;
+}
+
+#results{
+	margin-top: 10%;
+	margin-left: relative;
+	color: #46b8da;
+}
+
+#popular{
+	margin-top: 10%;
+	margin-left: relative;
+	color: #46b8da;
+}
+
+#highly-rated{
+	margin-top: 10%;
+	margin-left: relative;
+	color: #46b8da;
+}
+
+
+/*#heartBtn{
+	float: left;
+}*/
+
+>>>>>>> backend
 #favorite{
 	border: 0px;
 	padding: 0px;
 	outline: none;
+<<<<<<< HEAD
 	/*background-color: transparent;*/
+=======
+	color: #46b8da;
+}
+
+#favorites{
+	color: #46b8da;
+	margin-top: 6%;
+	margin-bottom: 0px;
+	margin-left: 35%;
+>>>>>>> backend
 }
 
 #watchMe{
@@ -145,6 +306,7 @@ img {
 
 #rating{
 	margin-right: 10px;
+<<<<<<< HEAD
 }
 
 /*THIS IS FOR THE INDEX PAGE TV SHOW POSTERS*/
@@ -153,3 +315,58 @@ img {
 }	position: relative;
 	left: 50%;
 }
+=======
+	
+	font-weight: 900px;
+	letter-spacing: 1px;
+}
+
+#date-aired{
+
+	font-weight: 700px;
+	letter-spacing: 1px;
+	color: #46b8da;
+}
+
+
+#popular{
+	
+	font-weight: 700px;
+	letter-spacing: 1px;
+	color: #46b8da;
+}
+
+#results{
+	
+	font-weight: 700px;
+	letter-spacing: 1px;
+	color: #46b8da;
+}
+
+#highly-rated{
+	
+	font-weight: 700px;
+	letter-spacing: 1px;
+	color: #46b8da;
+}
+
+#results-header{
+	font-weight: 900px;
+	letter-spacing: 1px;
+	color: #46b8da;
+}
+
+#indieResults{
+	width: 100%;
+
+}
+
+#topRatedPosters{
+	color: #46b8da;
+}
+
+#popularPosters{
+	color: #46b8da;
+}
+
+>>>>>>> backend

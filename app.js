@@ -18,10 +18,14 @@ var Users = function () {
 
 passport.serializeUser(function(user, done) {
   done(null, user);
+  
 });
 
-passport.deserializeUser(function(obj, done) {
-  done(null, obj);
+passport.deserializeUser(function(user, done) {
+  // console.log(user.id);
+  // Users().where({id:user.id}).then(function(user,err){
+    done(null, user);
+  // });  
 });
 
 // config
@@ -31,13 +35,15 @@ passport.use(new FacebookStrategy({
   callbackURL: config.facebook.callbackURL
   },
   function(accessToken, refreshToken, profile, done) {
-    console.log(profile);
+    
     process.nextTick(function () {
       Users().where({facebook_id: profile.id}).then(function(user, err) {
         if(err)
           done(err);
         if(user[0]) {
-          return done(null, user[0]);
+          // res.cookie('userID', user.id, { signed: true });
+          // res.render('users/profile');
+          return done(null, user[0]); //?
         } else {
           Users().insert({facebook_id: profile.id, name: profile.displayName, email: profile.emails}).then(function() {
             Users().where({facebook_id: profile.id}).then(function(data) {
@@ -111,11 +117,10 @@ app.use(function(err, req, res, next) {
   });
 });
 
+var PORT = process.env.PORT || 3000;
+  
+app.listen(PORT, function() {console.log("Listening on localhost:", PORT)});
 
-
-app.listen(3000, function(){
-  console.log("Server started on port 3000");
-});
 
 
 module.exports = app;
