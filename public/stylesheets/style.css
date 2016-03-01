@@ -34,20 +34,6 @@ a{
 	letter-spacing: 1px;
 }
 
-#username{
-	letter-spacing: 1px;
-	margin-top: 8%
-}
-
-#noUsername{
-	letter-spacing: 1px;
-	margin-top: 10%
-}
-
-#logout{
-	letter-spacing: 1px;
-}
-
 #right-nav-items{
 	
 	letter-spacing: 1px;
@@ -109,17 +95,9 @@ a{
    	justify-content: space-around;
 }
 
-#index-poster-profile{
-	margin-top: 70px;
-	display: flex;
-  	flex-flow: row wrap;
-  	justify-content: flex-end;
-}
-
 #index-posters{
 	float:left;
 }
-
 
 #title{
 	
@@ -217,23 +195,10 @@ a{
 	color: #46b8da;
 }
 
-
-/*#heartBtn{
-	float: left;
-}*/
-
 #favorite{
 	border: 0px;
 	padding: 0px;
 	outline: none;
-	color: #46b8da;
-}
-
-#favorites{
-	color: #46b8da;
-	margin-top: 6%;
-	margin-bottom: 0px;
-	margin-left: 35%;
 }
 
 #watchMe{
@@ -295,4 +260,3 @@ a{
 #popularPosters{
 	color: #46b8da;
 }
-

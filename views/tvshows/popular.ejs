@@ -49,7 +49,13 @@
       <div class='col-md-12' id='index-poster-rows'>
         <% populars.forEach(function(popular){ %>
         <div>
-          <img id ='index-posters'src="http://image.tmdb.org/t/p/w500<%= popular.poster_path %>" height="360" width="260" >
+
+          <form action="/tvshows/tvInfo" method="post" id='heartBtn'>
+           <input type="hidden" name="tmdbID" value="<%=popular.id %>">
+           <input type="image" id ='index-posters'
+            src="http://image.tmdb.org/t/p/w500<%= popular.poster_path %>" height="360" width="260" >
+          </form>
+
           <h4 id='title'> <%= popular.name %>
            <form action="/users/profile" method="post" id='heartBtn'>
             <input type="submit" class="btn btn-default btn-lg fa fa-heart" value='&#xf004;' id='favorite'>
@@ -73,5 +79,4 @@
     </div>
 </body>
 </html>
-
 

@@ -23,14 +23,12 @@ router.get('/popular',function(req,res){
 	});
 });
 
-
 router.get('/topRated', function(req,res){
 	MovieDB.miscTopRatedTvs(function(err, searchRes){
 		topRates = searchRes.results;
 		res.render("tvshows/topRated" , {topRates:topRates});
 	});
 });
-
 
 router.get('/tvAiringToday',function(req,res){
 	request.get('http://api.themoviedb.org/3/tv/latest', function(err, response, body){
@@ -72,42 +70,6 @@ router.post('/',function(req,res){
 	});
 });
 
-// Edit
-router.get('/:id/edit',function(req,res){
-	var id = req.params.id;
-	knex('tvshows').where({id:id}).first().then(function(author){
-		res.render("tvshows/edit", {author:author});
-	});
-});
-
-// Update
-router.put('/:id',function(req,res){
-	var id = req.params.id;
-	knex('tvshows').where({id:id}).first().update(req.body).then(function(){
-		res.redirect('/tvshows');
-	});
-});
-
-// Delete
-router.delete('/:id',function(req,res){
-	var id = req.params.id;
-	knex('tvshows').where({id:id}).del().then(function(){
-		res.redirect('/tvshows');
-	});
-});
 
 module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
