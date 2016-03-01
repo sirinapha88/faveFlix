@@ -22,11 +22,11 @@ router.get('/popular',function(req,res){
 		res.render("tvshows/popular", {populars:populars});
 	});
 });
-// New Release page
-router.get('/newRelease',function(req,res){
+
+router.get('/topRated', function(req,res){
 	MovieDB.miscTopRatedTvs(function(err, searchRes){
 		topRates = searchRes.results;
-		res.render("tvshows/newRelease" , {topRates:topRates});
+		res.render("tvshows/topRated" , {topRates:topRates});
 	});
 });
 
@@ -48,12 +48,13 @@ router.get('/search',function(req,res){
   });
 
 router.get('/search/:searchString', function(req,res){
-	var tvshowSearch = req.params.searchString;
 
+	var tvshowSearch = req.params.searchString;
+	console.log(tvshowSearch);
 	MovieDB.searchTv({query: tvshowSearch },function(err, searchRes){
 		tvshowLists = searchRes.results;
 		console.log("this is " + tvshowLists[0].id);
-  		res.render('tvshows/displayShow', {tvshowLists:tvshowLists});
+  		res.render('tvshows/displayShow', {tvshowLists:tvshowLists,tvshowSearch:tvshowSearch});
 	});
 });
 
@@ -69,29 +70,6 @@ router.post('/',function(req,res){
 	});
 });
 
-// Edit
-router.get('/:id/edit',function(req,res){
-	var id = req.params.id;
-	knex('tvshows').where({id:id}).first().then(function(author){
-		res.render("tvshows/edit", {author:author});
-	});
-});
-
-// Update
-router.put('/:id',function(req,res){
-	var id = req.params.id;
-	knex('tvshows').where({id:id}).first().update(req.body).then(function(){
-		res.redirect('/tvshows');
-	});
-});
-
-// Delete
-router.delete('/:id',function(req,res){
-	var id = req.params.id;
-	knex('tvshows').where({id:id}).del().then(function(){
-		res.redirect('/tvshows');
-	});
-});
 
 module.exports = router;
 

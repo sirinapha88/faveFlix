@@ -1,54 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="/stylesheets/style.css" media="screen" title="no title" charset="utf-8">
-  <meta charset="UTF-8">
-  <title>faveFlix</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha256-Ucf/ylcKTNevYP6l7VNUhGLDRZPQs1+LsbbxuzMxUJM= sha512-FW2XqnqMwERwg0LplG7D64h8zA1BsxvxrDseWpHLq8Dg8kOBmLs19XNa9oAajN/ToJRRklfDJ398sOU+7LcjZA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css" media="screen" title="no title" charset="utf-8">
+    <meta charset="UTF-8">
+    <title>faveFlix</title>    
 </head>
 <body>
-
-<div class="container">
+  <div class="container">
     <div class='header'>
         <h1><a href="/">faveFlix</a><img class='logo' src="https://image.freepik.com/free-icon/eye-outline-variant-with-heart-shaped-center_318-47710.jpg" alt="heart-eye" style="width:50px;height:50px;"></h1>
     </div>
-    <nav class="navbar navbar-default">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
-
+    <nav class="navbar navbar-default" id='navbar'>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                  <li><a href="#">Popular</a>
+              <ul class="nav navbar-nav" id='left-nav-items'>
+                  <li><a href="/tvshows/popular">Popular</a>
                   </li>
-                  <li><a href="#">Highly Rated</a>
+                  <li><a href="/tvshows/topRated">Highly Rated</a>
                   </li>
               </ul>
-                  <ul class='nav navbar-nav navbar-right'>
-                    <li><a href="/users/profile">Profile</a>
-                    </li>
-                    <li><a href="/users/login">Login</a>
-                    </li>
-                    <li><a href="/users/signup">Signup</a>
-                    </li>
-                  </ul>
+              <ul class='nav navbar-nav navbar-right' id='right-nav-items'>
+                  <li><a href="/users/profile">Profile</a>
+                  </li>
+                  <li><a href="/users/login">Login</a>
+                  </li>
+                  <li><a href="/users/signup">Signup</a>
+                  </li>
+              </ul>
           </div>
-
     </nav>
-        <div class='row'>
+
+    <div class='row'>
       <div class='col-md-3'></div>
         <div class='col-md-6' id="index-custom-search-input">
           <div class='input-group' id='search-box'>
-            <form action="/tvshows/search" method="get">
-            <label for="tvshow"></label>
-            <input type="text" name="tvshow" placeholder="Enter TV Show Name" required>
-            <input type="submit" value="submit">
-            </form>
+              <form action="/tvshows/search" method="get" id='tvSearch'>
+                  <label for="tvshow"></label>
+                  <input type="text" id='tvshow' name="tvshow" placeholder="   Search..." required>
+                  <input type="submit" class="fa fa-search" value= '&#xf002' id='searchBtn'>
+              </form>
             <div id="q-results" class="results"></div>
           </div>
       </div>
@@ -58,25 +49,26 @@
       <div class='col-md-12' id='index-poster-rows'>
         <% topRates.forEach(function(topRate){ %>
         <div>
-          <img id ='index-posters'src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="360" width="260" >
+         
+         <form action="/tvshows/tvInfo" method="post" id='heartBtn'>
+           <input type="hidden" name="tmdbID" value="<%=topRate.id %>">
+           <input type="image" id ='index-posters'
+            src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="360" width="260" >
+          </form>
+
           <h4 id='title'> <%= topRate.name %>
-          
+          <form action="/users/profile" method="post" id='heartBtn'>
+            <input type="submit" class="btn btn-default btn-lg fa fa-heart" value='&#xf004;' id='favorite'>
+            <input type="hidden" name="tmdbID" value="<%=topRate.id %>">
+            <!-- <a href="/users/profile"<span  style="color:#46b8da;"></span></a> -->
+          </form>
           </h4>
 
           <h6 id='rating'> Rating: <%= topRate.vote_average %>
-          &nbsp;
-          &nbsp;
-         
-              <button type="button" class="btn btn-default btn-lg" id='favorite'>
-                  <a href="/users/profile"
-                  <span class="fa fa-heart" style="color:#46b8da;" data-tmdbID="<%=topRate.id %>"></span></a>
-              </button>
-              &nbsp;
-          &nbsp;
-              <button type="button" class="btn btn-default btn-lg" id='watchMe'>
+          <button type="button" class="btn btn-default btn-lg" id='watchMe'>
                   <a href="/users/profile"
                   <span class="fa fa-eye" style="color:#46b8da;" data-tmdbID="<%=topRate.id %>"></span></a>
-             </button>
+              </button>
           </h6>
         </div>
        <% }) %>
@@ -84,26 +76,4 @@
     </div>
   
  </body>
-</html>
-            <input type="submit" value="submit">
-            <h3>TV Show Search Results:</h3>
-            <a href="/auth/facebook">Login with Facebook</a>
-            <a href="/users/signup">Signup</a>
-            <a href="/users/login">Log in</a>
-          </form>
-          <div id="q-results" class="results"></div> -->
-        <!-- </div> -->
-
-  <div class="container-fluid">
-  <h2> Top Rate TV Show</h2>
-  <% topRates.forEach(function(topRate){ %>
-	<h3> <%= topRate.name %></h3>
-  <img src="http://image.tmdb.org/t/p/w500<%= topRate.poster_path %>" height="200" width="150" >
-  <h4> Rating: <%= topRate.vote_average %></h4>
-  <h4> First on Air: <%= topRate.first_air_date %> </h4>
-  <p> <%= topRate.overview %> </p>
-  <% }) %>
-  
-  </div>
-  </body>
 </html>
