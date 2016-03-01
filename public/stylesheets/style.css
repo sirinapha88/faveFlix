@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-.header{
-	padding-bottom: 10px;
-}
-img {
-	width: 80;
-	height: 110;
-
-=======
->>>>>>> backend
 .user-commands{
 	margin-right: 10px;
 }
@@ -49,20 +34,6 @@ a{
 	letter-spacing: 1px;
 }
 
-#username{
-	letter-spacing: 1px;
-	margin-top: 8%
-}
-
-#noUsername{
-	letter-spacing: 1px;
-	margin-top: 10%
-}
-
-#logout{
-	letter-spacing: 1px;
-}
-
 #right-nav-items{
 	
 	letter-spacing: 1px;
@@ -71,10 +42,6 @@ a{
 #search-box{
 	margin-top: 50px;
 	margin-left: 0px;
-<<<<<<< HEAD
-/*	padding: 10px;*/
-=======
->>>>>>> backend
 }
 
 #tvshow{
@@ -126,35 +93,17 @@ a{
 	display: flex;
    	flex-flow: row wrap;
    	justify-content: space-around;
-<<<<<<< HEAD
-   	/*word-wrap: break-word;*/
-
-=======
-}
-
-#index-poster-profile{
-	margin-top: 70px;
-	display: flex;
-  	flex-flow: row wrap;
-  	justify-content: flex-end;
->>>>>>> backend
 }
 
 #index-posters{
 	float:left;
 }
 
-<<<<<<< HEAD
-#title{
-	word-wrap: break-word;
-=======
-
 #title{
 	
 	word-wrap: break-word;
 	color: #46b8da;
 	letter-spacing: 0px;
->>>>>>> backend
 }
 
 #about-f-f{
@@ -219,35 +168,6 @@ a{
 #likes{
 	text-align: center;
 	margin-top: 50%;
-<<<<<<< HEAD
-	color: #2FA4E7;
-}
-
-#watchlist{
-	text-align: center;
-	margin-top: 50%;
-	color: #2FA4E7;
-}
-
-#results{
-	margin-top: 10%;
-	margin-left: relative;
-	color: #2FA4E7;
-}
-
-#popular{
-	margin-top: 10%;
-	margin-left: relative;
-	color: #2FA4E7;
-}
-
-#highly-rated{
-	margin-top: 10%;
-	margin-left: relative;
-	color: #2FA4E7;
-}
-
-=======
 	color: #46b8da;
 }
 
@@ -275,28 +195,10 @@ a{
 	color: #46b8da;
 }
 
-
-/*#heartBtn{
-	float: left;
-}*/
-
->>>>>>> backend
 #favorite{
 	border: 0px;
 	padding: 0px;
 	outline: none;
-<<<<<<< HEAD
-	/*background-color: transparent;*/
-=======
-	color: #46b8da;
-}
-
-#favorites{
-	color: #46b8da;
-	margin-top: 6%;
-	margin-bottom: 0px;
-	margin-left: 35%;
->>>>>>> backend
 }
 
 #watchMe{
@@ -306,16 +208,6 @@ a{
 
 #rating{
 	margin-right: 10px;
-<<<<<<< HEAD
-}
-
-/*THIS IS FOR THE INDEX PAGE TV SHOW POSTERS*/
-/*#index-posters{
-	float:left;
-}	position: relative;
-	left: 50%;
-}
-=======
 	
 	font-weight: 900px;
 	letter-spacing: 1px;
@@ -368,5 +260,3 @@ a{
 #popularPosters{
 	color: #46b8da;
 }
-
->>>>>>> backend
