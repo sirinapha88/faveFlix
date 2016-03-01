@@ -22,13 +22,6 @@ router.get('/popular',function(req,res){
 		res.render("tvshows/popular", {populars:populars});
 	});
 });
-// New Release page
-// router.get('/newRelease',function(req,res){
-// 	MovieDB.miscTopRatedTvs(function(err, searchRes){
-// 		topRates = searchRes.results;
-// 		res.render("tvshows/newRelease" , {topRates:topRates});
-// 	});
-// });
 
 
 router.get('/topRated', function(req,res){
@@ -39,12 +32,15 @@ router.get('/topRated', function(req,res){
 });
 
 
-router.get('/tvAiringToday',function(req,res){
-	request.get('http://api.themoviedb.org/3/tv/latest', function(err, response, body){
-		var input = JSON.parse(body);
-		console.log(input);
-		// topRates = searchRes.results;
-		// res.render("tvshows/newRelease" , {topRates:topRates});
+
+// Display all season
+router.post('/tvInfo',function(req,res){
+	var id = req.body.tmdbID;
+	console.log(id);
+	MovieDB.tvInfo({id: id}, function(err, searchRes){
+		showLists = searchRes;
+		console.log(showLists);
+		res.render("tvshows/tvshowInfo" , {showLists:showLists});
 	});
 });
 
