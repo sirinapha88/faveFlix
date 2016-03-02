@@ -117,9 +117,9 @@ app.use(function(err, req, res, next) {
   });
 });
 
-// var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;
   
-// app.listen(PORT, function() {console.log("Listening on localhost:", PORT)});
+app.listen(PORT, function() {console.log("Listening on localhost:", PORT)});
 
 
 
