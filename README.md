@@ -1,4 +1,4 @@
-# faveFlick
+# faveFlix
 
 #TUM && ANA MOVIE DATABASE PROJECT PROPOSAL:
 * USERS: 
