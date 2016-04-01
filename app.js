@@ -1,6 +1,5 @@
 var express = require('express');
 var passport = require('passport');
-var config = require('./oauth.js');
 var FacebookStrategy = require('passport-facebook').Strategy;
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -22,17 +21,14 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(user, done) {
-  // console.log(user.id);
-  // Users().where({id:user.id}).then(function(user,err){
-    done(null, user);
-  // });  
+    done(null, user); 
 });
 
-// config
+
 passport.use(new FacebookStrategy({
-  clientID: config.facebook.clientID,
-  clientSecret: config.facebook.clientSecret,
-  callbackURL: config.facebook.callbackURL
+  clientID: process.env.FBCLIENTID,
+  clientSecret: process.env.FBCLIENTSECRET,
+  callbackURL: 'http://localhost:3000/auth/facebook/callback'
   },
   function(accessToken, refreshToken, profile, done) {
     
